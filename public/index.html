@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackHalt - Cyber Intelligence Council</title>
+
+  <meta
+    name="description"
+    content="HackHalt - Cyber Intelligence Council: Combating cybercrime through prevention, education, detection, and rapid response."
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo-wrapper">
+        <img src="images/logo-light.png" alt="HackHalt CIC Logo" class="logo" />
+        <div class="logo-text">
+          <span class="logo-title">HackHalt</span>
+          <span class="logo-subtitle">Cyber Intelligence Council</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#pillars">Pillars</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#join" class="btn btn-nav-cta">Join Us</a>
+          </li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <h1>
+          Securing the <span class="gradient-text">Digital Bharat</span>
+        </h1>
+        <p>
+          HackHalt - Cyber Intelligence Council is committed to combating
+          cybercrime through <strong>prevention</strong>,
+          <strong>education</strong>, <strong>detection</strong>, and
+          <strong>rapid response</strong> – empowering citizens,
+          enterprises, and public institutions with resilient cyber practices.
+        </p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-primary">
+            Join the Council
+          </a>
+          <a href="#blogs" class="btn btn-outline">
+            Explore Insights
+          </a>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label">Focus Areas</span>
+            <span class="meta-value">Awareness, Threat Intel, Governance</span>
+          </div>
+          <div>
+            <span class="meta-label">Engagement</span>
+            <span class="meta-value">Academia, Industry, Government*</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-card">
+          <div class="hero-orbit"></div>
+          <img
+            src="images/hero-cyber.png"
+            alt="Cyber Intelligence Illustration"
+            class="hero-image"
+          />
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-label">Threats Analyzed</span>
+              <span class="stat-value">25K+</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Communities Trained</span>
+              <span class="stat-value">150+</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Partners</span>
+              <span class="stat-value">40+</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="section">
+    <div class="container section-header reveal">
+      <h2>About HackHalt - Cyber Intelligence Council</h2>
+      <p>
+        HackHalt - CIC is a collaborative cyber initiative dedicated to building
+        a secure and resilient digital ecosystem across India through
+        awareness, capacity building, and actionable intelligence.
+      </p>
+    </div>
+
+    <div class="container about-grid">
+      <div class="about-card reveal">
+        <h3>Our Mission</h3>
+        <p>
+          To reduce the impact of cybercrime by empowering individuals,
+          startups, enterprises, and institutions with structured learning,
+          practical frameworks, and rapid response guidance.
+        </p>
+        <ul class="checklist">
+          <li>Nationwide cyber awareness and literacy programs</li>
+          <li>Cyber hygiene frameworks for businesses and institutions</li>
+          <li>Research-backed threat intelligence dissemination</li>
+          <li>Multi-stakeholder collaboration with law enforcement</li>
+        </ul>
+      </div>
+
+      <div class="about-card reveal">
+        <h3>What We Do</h3>
+        <p>
+          Our work spans from grassroots awareness to advanced technical
+          engagements, ensuring cyber resilience at every level.
+        </p>
+        <div class="chips">
+          <span class="chip">Cyber Awareness Campaigns</span>
+          <span class="chip">Capture The Flag (CTF) Events</span>
+          <span class="chip">Threat Intel Briefings</span>
+          <span class="chip">Workshops & Bootcamps</span>
+          <span class="chip">Security Posture Assessments</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOUR PILLARS ========== -->
+  <section id="pillars" class="section section-alt">
+    <div class="container section-header reveal">
+      <h2>Our Core Pillars</h2>
+      <p>
+        Anchored in global best practices, HackHalt - CIC operates through four
+        core pillars that align awareness, technology, and governance.
+      </p>
+    </div>
+
+    <div class="container cards-grid">
+      <article class="pillar-card reveal">
+        <div class="icon-circle">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>Prevention</h3>
+        <p>
+          Proactive frameworks and practices that minimize cyber risk before
+          incidents occur.
+        </p>
+        <ul class="pillars-list">
+          <li>Security awareness campaigns</li>
+          <li>Policy & process consulting</li>
+          <li>Cyber hygiene playbooks</li>
+        </ul>
+      </article>
+
+      <article class="pillar-card reveal">
+        <div class="icon-circle">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <h3>Education</h3>
+        <p>
+          Structured programs that upskill students, professionals, and
+          decision-makers in cybersecurity.
+        </p>
+        <ul class="pillars-list">
+          <li>Capacity-building workshops</li>
+          <li>Curriculum design for academia</li>
+          <li>Corporate training modules</li>
+        </ul>
+      </article>
+
+      <article class="pillar-card reveal">
+        <div class="icon-circle">
+          <i class="fa-solid fa-magnifying-glass-chart"></i>
+        </div>
+        <h3>Detection</h3>
+        <p>
+          Building capability to detect threats, anomalies, and vulnerabilities
+          at scale.
+        </p>
+        <ul class="pillars-list">
+          <li>Threat hunting guidance</li>
+          <li>Vulnerability assessments</li>
+          <li>Security monitoring practices</li>
+        </ul>
+      </article>
+
+      <article class="pillar-card reveal">
+        <div class="icon-circle">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3>Rapid Response</h3>
+        <p>
+          Incident readiness and structured response playbooks that reduce
+          impact and recovery time.
+        </p>
+        <ul class="pillars-list">
+          <li>Incident response playbooks</li>
+          <li>Post-incident reviews</li>
+          <li>Resilience & recovery planning</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ========== BLOGS & ARTICLES ========== -->
+  <section id="blogs" class="section">
+    <div class="container section-header reveal">
+      <h2>Blogs & Articles</h2>
+      <p>
+        Insights, threat updates, and governance perspectives from HackHalt
+        practitioners and partners.
+      </p>
+    </div>
+
+    <div class="container blogs-layout">
+      <aside class="blogs-filter reveal">
+        <h3>Filter by Category</h3>
+        <div class="chips">
+          <button class="chip chip-active" data-filter="all">All</button>
+          <button class="chip" data-filter="threats">Threat Intel</button>
+          <button class="chip" data-filter="awareness">Awareness</button>
+          <button class="chip" data-filter="policy">Policy & Governance</button>
+        </div>
+      </aside>
+
+      <div class="blogs-grid" id="blogsGrid">
+        <!-- Blog cards injected by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EVENTS (UPCOMING + PAST) ========== -->
+  <section id="events" class="section section-alt">
+    <div class="container section-header reveal">
+      <h2>Events & Engagements</h2>
+      <p>
+        HackHalt - CIC enables structured engagement through conclaves, CTFs,
+        workshops, and awareness drives.
+      </p>
+    </div>
+
+    <div class="container events-tabs-wrapper">
+      <div class="events-tabs">
+        <button class="events-tab active" data-tab="upcoming">
+          Upcoming Events
+        </button>
+        <button class="events-tab" data-tab="past">
+          Past Events
+        </button>
+      </div>
+
+      <div class="events-content">
+        <div class="events-grid" id="upcomingEvents">
+          <!-- Upcoming events loaded by main.js -->
+        </div>
+
+        <div class="events-grid hidden" id="pastEvents">
+          <!-- Past events loaded by main.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARTNERS (EVENT + GOV) ========== -->
+  <section id="partners" class="section">
+    <div class="container section-header reveal">
+      <h2>Event & Strategic Partners</h2>
+      <p>
+        We collaborate with academic institutions, industry leaders, and
+        specialized communities to scale impact.
+      </p>
+    </div>
+
+    <div class="container partners-grid">
+      <div class="partners-block reveal">
+        <h3>Event Partners</h3>
+        <p>
+          Organisations that co-design and co-host HackHalt events across the
+          country.
+        </p>
+        <div class="logos-row">
+          <div class="logo-card">
+            <img src="images/partner-1.png" alt="Partner 1" />
+            <span>CyberVerse Labs</span>
+          </div>
+          <div class="logo-card">
+            <img src="images/partner-2.png" alt="Partner 2" />
+            <span>SecureNet Academy</span>
+          </div>
+          <div class="logo-card">
+            <div class="placeholder-logo">+ Many More</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partners-block reveal">
+        <h3>Government Partnerships*</h3>
+        <p class="gov-note">
+          *Displayed logos are placeholders. Final government / institutional
+          partnership branding will be updated post formal approval.
+        </p>
+        <div class="logos-row">
+          <div class="logo-card gov-card">
+            <img src="images/gov-partner-1.png" alt="Gov Partner Placeholder" />
+            <span>National Cyber Initiative (Placeholder)</span>
+          </div>
+          <div class="logo-card gov-card">
+            <div class="placeholder-logo">Awaiting Approval</div>
+            <span>State Cyber Security Cell</span>
+          </div>
+          <div class="logo-card gov-card">
+            <div class="placeholder-logo">Reserved</div>
+            <span>Digital Safety Programme</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== JOIN SECTION ========== -->
+  <section id="join" class="section section-alt">
+    <div class="container join-grid">
+      <div class="join-content reveal">
+        <h2>Join HackHalt - Cyber Intelligence Council</h2>
+        <p>
+          Whether you are a student, cybersecurity professional, institution, or
+          community leader, there is a role for you in this initiative.
+        </p>
+        <ul class="checklist">
+          <li>Access curated cyber awareness and threat intel</li>
+          <li>Priority invitations to HackHalt events & CTFs</li>
+          <li>Opportunities to contribute blogs and research</li>
+          <li>Collaboration for campus & community programmes</li>
+        </ul>
+      </div>
+
+      <div class="join-card reveal">
+        <h3>Register Your Interest</h3>
+        <form id="joinForm" class="form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="emailJoin">Email Address</label>
+            <input
+              type="email"
+              id="emailJoin"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="role">You are joining as</label>
+            <select id="role" name="role" required>
+              <option value="">Select an option</option>
+              <option value="student">Student</option>
+              <option value="professional">Working Professional</option>
+              <option value="institution">Institution / Organisation</option>
+              <option value="community">Community Leader</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="messageJoin">Tell us how you want to contribute</label>
+            <textarea
+              id="messageJoin"
+              name="message"
+              rows="3"
+              placeholder="I want to..."
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Submit Interest
+          </button>
+          <p class="form-footnote">
+            In production, this form will connect to a backend/CRM. This demo
+            logs your response in the console.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="section">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <h2>Contact & Collaboration</h2>
+        <p>
+          Share collaboration ideas, event proposals, or partnership
+          opportunities with HackHalt - CIC.
+        </p>
+        <div class="contact-card">
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <span>Email</span>
+              <a href="mailto:contact@hackhalt.org">contact@hackhalt.org</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <div>
+              <span>LinkedIn</span>
+              <a href="#" target="_blank" rel="noreferrer">
+                HackHalt Cyber Intelligence Council
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <span>Base Location</span>
+              <p>India (Remote-first & Pan-India collaborations)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper reveal">
+        <h3>Write to Us</h3>
+        <form id="contactForm" class="form">
+          <div class="form-group">
+            <label for="nameContact">Name</label>
+            <input
+              type="text"
+              id="nameContact"
+              name="name"
+              placeholder="Your name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="emailContact">Email</label>
+            <input
+              type="email"
+              id="emailContact"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="subjectContact">Subject</label>
+            <input
+              type="text"
+              id="subjectContact"
+              name="subject"
+              placeholder="Subject of your message"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="messageContact">Message</label>
+            <textarea
+              id="messageContact"
+              name="message"
+              rows="4"
+              placeholder="Your message..."
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-outline btn-full">
+            Send Message
+          </button>
+          <p class="form-footnote">
+            This demo form logs messages to the browser console. In production,
+            integrate with email or a ticketing system.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">HackHalt - CIC</span>
+        <p>
+          Building a safer digital tomorrow through intelligence, collaboration,
+          and continuous learning.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#blogs">Blogs</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#partners">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+          <li><a href="#">Terms of Collaboration</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Follow</h4>
+        <ul class="social-links">
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Blog Modal -->
+  <div id="blogModal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close article">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalMeta"></p>
+        <p id="modalContent"></p>
+      </div>
+    </div>
+    <div class="modal-backdrop"></div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
