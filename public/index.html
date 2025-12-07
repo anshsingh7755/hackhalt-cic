@@ -31,13 +31,13 @@
   <!-- ========== HEADER / NAV ========== -->
   <header class="site-header">
     <div class="container nav-container">
-      <div class="logo-wrapper">
+      <a href="/" class="logo-wrapper" aria-label="HackHalt CIC Home">
         <img src="images/logo-light.png" alt="HackHalt CIC Logo" class="logo" />
         <div class="logo-text">
           <span class="logo-title">HackHalt</span>
           <span class="logo-subtitle">Cyber Intelligence Council</span>
         </div>
-      </div>
+      </a>
 
       <nav class="nav">
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -45,15 +45,14 @@
         </button>
 
         <ul class="nav-links" id="navLinks">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#pillars">Pillars</a></li>
-          <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#partners">Partners</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
           <li>
-            <a href="#join" class="btn btn-nav-cta">Join Us</a>
+            <a href="/contact" class="btn btn-nav-cta">Join Us</a>
           </li>
         </ul>
 
@@ -85,10 +84,10 @@
           enterprises, and public institutions with resilient cyber practices.
         </p>
         <div class="hero-actions">
-          <a href="#join" class="btn btn-primary">
-            Join the Council
+          <a href="/about" class="btn btn-primary">
+            Explore Our Mission
           </a>
-          <a href="#blogs" class="btn btn-outline">
+          <a href="/blogs" class="btn btn-outline">
             Explore Insights
           </a>
         </div>
@@ -131,236 +130,70 @@
     </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="section">
-    <div class="container section-header reveal">
-      <h2>About HackHalt - Cyber Intelligence Council</h2>
-      <p>
-        HackHalt - CIC is a collaborative cyber initiative dedicated to building
-        a secure and resilient digital ecosystem across India through
-        awareness, capacity building, and actionable intelligence.
-      </p>
-    </div>
-
-    <div class="container about-grid">
-      <div class="about-card reveal">
-        <h3>Our Mission</h3>
-        <p>
-          To reduce the impact of cybercrime by empowering individuals,
-          startups, enterprises, and institutions with structured learning,
-          practical frameworks, and rapid response guidance.
-        </p>
-        <ul class="checklist">
-          <li>Nationwide cyber awareness and literacy programs</li>
-          <li>Cyber hygiene frameworks for businesses and institutions</li>
-          <li>Research-backed threat intelligence dissemination</li>
-          <li>Multi-stakeholder collaboration with law enforcement</li>
-        </ul>
+  <!-- ========== EXPERTISE / SERVICES (Optimized) ========== -->
+  <section id="expertise" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Comprehensive Cybersecurity Solutions</h2>
+        <p>From interactive workshops to professional certifications, we provide targeted programs and hands-on sessions for individuals, teams, and institutions.</p>
       </div>
 
-      <div class="about-card reveal">
-        <h3>What We Do</h3>
-        <p>
-          Our work spans from grassroots awareness to advanced technical
-          engagements, ensuring cyber resilience at every level.
-        </p>
-        <div class="chips">
-          <span class="chip">Cyber Awareness Campaigns</span>
-          <span class="chip">Capture The Flag (CTF) Events</span>
-          <span class="chip">Threat Intel Briefings</span>
-          <span class="chip">Workshops & Bootcamps</span>
-          <span class="chip">Security Posture Assessments</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOUR PILLARS ========== -->
-  <section id="pillars" class="section section-alt">
-    <div class="container section-header reveal">
-      <h2>Our Core Pillars</h2>
-      <p>
-        Anchored in global best practices, HackHalt - CIC operates through four
-        core pillars that align awareness, technology, and governance.
-      </p>
-    </div>
-
-    <div class="container cards-grid">
-      <article class="pillar-card reveal">
-        <div class="icon-circle">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <h3>Prevention</h3>
-        <p>
-          Proactive frameworks and practices that minimize cyber risk before
-          incidents occur.
-        </p>
-        <ul class="pillars-list">
-          <li>Security awareness campaigns</li>
-          <li>Policy & process consulting</li>
-          <li>Cyber hygiene playbooks</li>
-        </ul>
-      </article>
-
-      <article class="pillar-card reveal">
-        <div class="icon-circle">
-          <i class="fa-solid fa-graduation-cap"></i>
-        </div>
-        <h3>Education</h3>
-        <p>
-          Structured programs that upskill students, professionals, and
-          decision-makers in cybersecurity.
-        </p>
-        <ul class="pillars-list">
-          <li>Capacity-building workshops</li>
-          <li>Curriculum design for academia</li>
-          <li>Corporate training modules</li>
-        </ul>
-      </article>
-
-      <article class="pillar-card reveal">
-        <div class="icon-circle">
-          <i class="fa-solid fa-magnifying-glass-chart"></i>
-        </div>
-        <h3>Detection</h3>
-        <p>
-          Building capability to detect threats, anomalies, and vulnerabilities
-          at scale.
-        </p>
-        <ul class="pillars-list">
-          <li>Threat hunting guidance</li>
-          <li>Vulnerability assessments</li>
-          <li>Security monitoring practices</li>
-        </ul>
-      </article>
-
-      <article class="pillar-card reveal">
-        <div class="icon-circle">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <h3>Rapid Response</h3>
-        <p>
-          Incident readiness and structured response playbooks that reduce
-          impact and recovery time.
-        </p>
-        <ul class="pillars-list">
-          <li>Incident response playbooks</li>
-          <li>Post-incident reviews</li>
-          <li>Resilience & recovery planning</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- ========== BLOGS & ARTICLES ========== -->
-  <section id="blogs" class="section">
-    <div class="container section-header reveal">
-      <h2>Blogs & Articles</h2>
-      <p>
-        Insights, threat updates, and governance perspectives from HackHalt
-        practitioners and partners.
-      </p>
-    </div>
-
-    <div class="container blogs-layout">
-      <aside class="blogs-filter reveal">
-        <h3>Filter by Category</h3>
-        <div class="chips">
-          <button class="chip chip-active" data-filter="all">All</button>
-          <button class="chip" data-filter="threats">Threat Intel</button>
-          <button class="chip" data-filter="awareness">Awareness</button>
-          <button class="chip" data-filter="policy">Policy & Governance</button>
-        </div>
-      </aside>
-
-      <div class="blogs-grid" id="blogsGrid">
-        <!-- Blog cards injected by main.js -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EVENTS (UPCOMING + PAST) ========== -->
-  <section id="events" class="section section-alt">
-    <div class="container section-header reveal">
-      <h2>Events & Engagements</h2>
-      <p>
-        HackHalt - CIC enables structured engagement through conclaves, CTFs,
-        workshops, and awareness drives.
-      </p>
-    </div>
-
-    <div class="container events-tabs-wrapper">
-      <div class="events-tabs">
-        <button class="events-tab active" data-tab="upcoming">
-          Upcoming Events
-        </button>
-        <button class="events-tab" data-tab="past">
-          Past Events
-        </button>
-      </div>
-
-      <div class="events-content">
-        <div class="events-grid" id="upcomingEvents">
-          <!-- Upcoming events loaded by main.js -->
-        </div>
-
-        <div class="events-grid hidden" id="pastEvents">
-          <!-- Past events loaded by main.js -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== PARTNERS (EVENT + GOV) ========== -->
-  <section id="partners" class="section">
-    <div class="container section-header reveal">
-      <h2>Event & Strategic Partners</h2>
-      <p>
-        We collaborate with academic institutions, industry leaders, and
-        specialized communities to scale impact.
-      </p>
-    </div>
-
-    <div class="container partners-grid">
-      <div class="partners-block reveal">
-        <h3>Event Partners</h3>
-        <p>
-          Organisations that co-design and co-host HackHalt events across the
-          country.
-        </p>
-        <div class="logos-row">
-          <div class="logo-card">
-            <img src="images/partner-1.png" alt="Partner 1" />
-            <span>CyberVerse Labs</span>
+      <div class="expertise-grid">
+        <!-- Workshop card -->
+        <a class="card-link" href="/services#workshops">
+          <div class="expertise-card partnership-card reveal">
+            <div class="icon-circle"><i class="fa-solid fa-user-helmet-safety"></i></div>
+            <div class="expertise-body">
+              <h3>Interactive Workshops</h3>
+              <p>Hands-on workshops that teach practical defensive skills, incident response basics, and community-ready cyber hygiene practices.</p>
+              <div class="hero-actions" style="justify-content:flex-start;margin-top:1rem;">
+                <a class="btn btn-outline" href="/contact">Learn More</a>
+              </div>
+            </div>
           </div>
-          <div class="logo-card">
-            <img src="images/partner-2.png" alt="Partner 2" />
-            <span>SecureNet Academy</span>
-          </div>
-          <div class="logo-card">
-            <div class="placeholder-logo">+ Many More</div>
-          </div>
-        </div>
-      </div>
+        </a>
 
-      <div class="partners-block reveal">
-        <h3>Government Partnerships*</h3>
-        <p class="gov-note">
-          *Displayed logos are placeholders. Final government / institutional
-          partnership branding will be updated post formal approval.
-        </p>
-        <div class="logos-row">
-          <div class="logo-card gov-card">
-            <img src="images/gov-partner-1.png" alt="Gov Partner Placeholder" />
-            <span>National Cyber Initiative (Placeholder)</span>
+        <!-- Corporate training card -->
+        <a class="card-link" href="/contact">
+          <div class="expertise-card partnership-card reveal">
+            <div class="icon-circle"><i class="fa-solid fa-building-lock"></i></div>
+            <div class="expertise-body">
+              <h3>Corporate Training</h3>
+              <p>Role-based training programs focused on secure engineering, compliance readiness, and executive tabletop exercises for leadership.</p>
+              <div class="hero-actions" style="justify-content:flex-start;margin-top:1rem;">
+                <a class="btn btn-outline" href="/contact">Book Session</a>
+              </div>
+            </div>
           </div>
-          <div class="logo-card gov-card">
-            <div class="placeholder-logo">Awaiting Approval</div>
-            <span>State Cyber Security Cell</span>
+        </a>
+
+        <!-- ISSO card with image (two-column inside the card) -->
+        <a class="card-link" href="/contact">
+          <div class="expertise-card partnership-card reveal expertise-iso">
+            <div class="expertise-media">
+              <img src="images/iso-attachment-2.svg" alt="ISSO program illustration" />
+            </div>
+            <div class="expertise-body">
+              <h3>ISSO / ISO Training</h3>
+              <p>Professional Information Systems Security Officer (ISSO) certification program with an industry-recognized curriculum, practical labs, and assessment. Suitable for security leads and practitioners preparing for formal ISSO/ISO roles.</p>
+              <div class="hero-actions" style="justify-content:flex-start;margin-top:1rem;">
+                <a class="btn btn-primary" href="/isso.html">Learn More</a>
+              </div>
+            </div>
           </div>
-          <div class="logo-card gov-card">
-            <div class="placeholder-logo">Reserved</div>
-            <span>Digital Safety Programme</span>
+        </a>
+
+        <!-- Sessions / booking card -->
+        <div class="card-link">
+          <div class="expertise-card partnership-card reveal">
+            <div class="icon-circle"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <div class="expertise-body">
+              <h3>Sessions</h3>
+              <p>Book advanced sessions covering latest threats, secure architecture patterns, and hands-on security implementations delivered by our experts.</p>
+              <div class="hero-actions" style="justify-content:flex-start;margin-top:1rem;">
+                <a class="btn btn-primary" href="/book-session.html">Request Session</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -542,10 +375,12 @@
       <div class="footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#partners">Partners</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -590,6 +425,7 @@
     <div class="modal-backdrop"></div>
   </div>
 
+  <script src="assets/js/utils.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

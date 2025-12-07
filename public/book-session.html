@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Session — HackHalt</title>
+  <meta name="description" content="Request a training session with HackHalt experts. Choose a package, pick a date, and request a quote." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="/" class="logo-wrapper" aria-label="HackHalt CIC Home">
+        <img src="images/logo-light.png" alt="HackHalt CIC Logo" class="logo" />
+        <div class="logo-text">
+          <span class="logo-title">HackHalt</span>
+          <span class="logo-subtitle">Cyber Intelligence Council</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/contact" class="btn btn-nav-cta">Join Us</a></li>
+        </ul>
+
+        <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Book a Training Session</h2>
+          <p>Choose from ready-made packages or request a custom engagement. We deliver workshops, tabletop exercises, secure architecture reviews, and hands-on implementation sessions.</p>
+        </div>
+
+        <div class="cards-grid booking-grid">
+          <div class="pillars-list reveal stat-full" style="grid-column:1/-1;">
+            <div class="stat-card">
+              <h3>How it works</h3>
+              <p>Pick a package (Individual, Team, Enterprise), select preferred dates, provide a short description of goals, and submit. Our team will respond with availability and a quote within 2 business days.</p>
+            </div>
+          </div>
+
+          <div class="pillar-card reveal">
+            <h3>Individual</h3>
+            <p>1:1 hands-on mentorship, 3-hour focused deep-dive. Ideal for practitioners and leaders seeking practical skill upgrades.</p>
+            <ul class="pillars-list">
+              <li>Duration: 3 hours</li>
+              <li>Price: ₹3,999 (indicative)</li>
+              <li>Delivery: Remote or on-site (additional travel costs)</li>
+            </ul>
+            <div style="margin-top:0.8rem;"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSejB8qb9xISIHV4Ziy5dhL6ipoF6O6EGFg6oqBM4zzsltZ5DA/viewform?pli=1" target="_blank" rel="noopener noreferrer">Request This Package</a></div>
+          </div>
+
+          <div class="pillar-card reveal">
+            <h3>Team Workshop</h3>
+            <p>Half-day or full-day team workshops focused on secure SDLC, incident response tabletop, or secure architecture patterns.</p>
+            <ul class="pillars-list">
+              <li>Duration: 1/2 day – 1 day</li>
+              <li>Price: ₹14,999 (half-day) / ₹24,999 (full-day)</li>
+              <li>Includes: Pre-engagement scoping and follow-up report</li>
+            </ul>
+            <div style="margin-top:0.8rem;"><a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSejB8qb9xISIHV4Ziy5dhL6ipoF6O6EGFg6oqBM4zzsltZ5DA/viewform?pli=1" target="_blank" rel="noopener noreferrer">Request This Package</a></div>
+          </div>
+
+          <div class="pillar-card reveal">
+            <h3>Enterprise</h3>
+            <p>Multi-day engagements for governance, SOC setup, architecture reviews, and hands-on security implementation across large teams and infrastructure.</p>
+            <ul class="pillars-list">
+              <li>Duration: Custom</li>
+              <li>Price: Custom (contact for quote)</li>
+              <li>Includes: On-site option, dedicated lead, tailored curriculum</li>
+            </ul>
+            <div style="margin-top:0.8rem;"><a class="btn btn-primary" href="/contact">Request Quote</a></div>
+          </div>
+
+          <div class="pillar-card reveal" style="grid-column:1/-1;">
+            <h3>Request a Session</h3>
+            <form id="bookingForm" class="form">
+              <div class="form-group">
+                <label for="nameBooking">Full name</label>
+                <input id="nameBooking" name="name" type="text" required />
+              </div>
+              <div class="form-group">
+                <label for="emailBooking">Email</label>
+                <input id="emailBooking" name="email" type="email" required />
+              </div>
+              <div class="form-group">
+                <label for="orgBooking">Organisation (optional)</label>
+                <input id="orgBooking" name="organisation" type="text" />
+              </div>
+              <div class="form-group">
+                <label for="packageSelect">Package</label>
+                <select id="packageSelect" name="package" required>
+                  <option value="individual">Individual</option>
+                  <option value="team">Team Workshop</option>
+                  <option value="enterprise">Enterprise</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="datePrefer">Preferred dates / windows</label>
+                <input id="datePrefer" name="dates" type="text" placeholder="e.g. 10-11 Jan or Week of 15 Feb" />
+              </div>
+              <div class="form-group">
+                <label for="messageBooking">Brief objective</label>
+                <textarea id="messageBooking" name="message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Submit Request</button>
+              <p class="form-footnote">This demo form logs to the browser console. In production, integrate with backend or Google Form.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">HackHalt - CIC</span>
+        <p>Building a safer digital tomorrow through intelligence, collaboration, and continuous learning.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+          <li><a href="#">Terms of Collaboration</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Follow</h4>
+        <ul class="social-links">
+          <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Demo booking form handler
+    document.getElementById('bookingForm')?.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('Booking request:', data);
+      alert('Request submitted — check console (demo). We will contact you with availability.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
