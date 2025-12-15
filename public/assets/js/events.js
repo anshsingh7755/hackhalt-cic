@@ -6,11 +6,13 @@ const upcomingEvents = [
   {
     id: 1,
     title: "Amity International School - Cybersecurity Awareness Workshop",
+    image: "images/amity-mayur-vihar.jpg",
     type: "School Workshop",
-    mode: "In-Person  Delhi",
+    mode: "In-Person",
     date: "17 July 2025",
-    time: "10:30 AM to 1 PM",
-    location: "Mayur Vihar Phase 1 East Delhi",
+    time: "10:30 AM to 1:00 PM",
+    location: "Mayur Vihar Phase 1, East Delhi",
+    sourceFile: "Amity International School - Mayur Vihar",
     meta: "200+ students engaged, interactive session, digital safety focus",
     description: "Interactive cybersecurity awareness workshop at Amity International School focused on helping students understand online threats, safe browsing practices, and digital citizenship.",
     speakers: ["HackHalt Trainers", "School Faculty"],
@@ -19,11 +21,13 @@ const upcomingEvents = [
   {
     id: 2,
     title: "ASN Secondary Public School - Digital Safety Program",
+    image: "images/asn-mayur-vihar.jpg",
     type: "School Awareness",
-    mode: "In-Person  Delhi",
+    mode: "In-Person",
     date: "17 July 2025",
     time: "8:00 AM to 10:00 AM",
-    location: "Mayur Vihar Phase 1 East Delhi",
+    location: "Mayur Vihar Phase 1, East Delhi",
+    sourceFile: "ASN Public School - Mayur Vihar",
     meta: "150+ students, cyber hygiene training, parent engagement session",
     description: "Comprehensive digital safety program teaching students and parents about online security, phishing awareness, and responsible internet usage.",
     speakers: ["HackHalt Team", "Security Experts"],
@@ -32,11 +36,13 @@ const upcomingEvents = [
   {
     id: 3,
     title: "AWS Convent School - Cybersecurity Bootcamp",
+    image: "images/aws-lalganj.jpg",
     type: "Technical Training",
-    mode: "In-Person  Uttar Pradesh",
+    mode: "In-Person",
     date: "04 July 2025",
     time: "11:00 AM to 1:00 PM",
     location: "Lalganj, Mirzapur, Uttar Pradesh",
+    sourceFile: "AWS convent school - Lalganj",
     meta: "120+ participants, hands-on labs, career guidance",
     description: "Intensive bootcamp introducing school students to cybersecurity careers, basic security concepts, and practical hands-on lab exercises.",
     speakers: ["Industry Professionals", "HackHalt Mentors"],
@@ -45,6 +51,7 @@ const upcomingEvents = [
   {
     id: 4,
     title: "National Cyber Awareness Campaign - Schools Edition",
+    image: "https://source.unsplash.com/800x600/?conference,stage",
     type: "Pan-India Campaign",
     mode: "Multiple Locations",
     date: "Aug 15 - Sep 30, 2025",
@@ -58,11 +65,13 @@ const upcomingEvents = [
   {
     id: 5,
     title: "Teacher Training Workshop - Digital Security Curriculum",
+    image: "https://source.unsplash.com/800x600/?teacher,training",
     type: "Educator Program",
-    mode: "Hybrid  Online + In-Person",
+    mode: "Hybrid (Online + In-Person)",
     date: "Sep 01 - Sep 15, 2025",
     time: "10:00 AM - 12:00 PM",
-    location: "Multiple Cities, Online Platform",
+    location: "Multiple Cities / Online",
+    sourceFile: "Teacher Training Workshop - Curriculum",
     meta: "500+ teachers trained, curriculum resources, certification",
     description: "Training program for teachers to understand cybersecurity concepts and integrate digital safety education into school curricula.",
     speakers: ["Curriculum Experts", "Security Practitioners"],
@@ -74,12 +83,14 @@ const pastEvents = [
   {
     id: 1,
     title: "Amity International School - Cybersecurity Workshop",
+    image: "https://drive.google.com/file/d/1C8DRU4VCjc9GAvdhVzqZiTHTvSIXCmIT/view?usp=drive_link",
     type: "School Workshop",
-    mode: "Delhi  Completed",
+    mode: "Delhi — Completed",
     date: "17 July 2025",
-    time: "10:30 AM - 1 PM IST",
-    location: "Mayur Vihar Phase 1 East Delhi",
+    time: "10:30 AM - 1:00 PM IST",
+    location: "Mayur Vihar Phase 1, East Delhi",
     meta: "200+ students, 100% attendance, positive feedback received",
+    sourceFile: "Amity International School - Mayur Vihar",
     stats: "200+ Students | Interactive Format | High Engagement | Certificates Issued",
     icon: "fa-school",
     description: "Successful cybersecurity awareness workshop introducing students to digital safety, online threats, and practical protection strategies."
@@ -87,11 +98,12 @@ const pastEvents = [
   {
     id: 2,
     title: "ASN Secondary Public School - Digital Literacy Drive",
+    image: "https://drive.google.com/file/d/10cHJMsUlNkCfxfq6uzjxCZVaM6eipnmc/view?usp=drive_link",
     type: "Educational Initiative",
-    mode: "Delhi  Completed",
+    mode: "Delhi — Completed",
     date: "17 July 2025",
     time: "8:00 AM - 10:00 AM IST",
-    location: "Mayur Vihar Phase 1 East Delhi",
+    location: "Mayur Vihar Phase 1, East Delhi",
     meta: "150+ students and parents engaged, cyber hygiene training completed",
     stats: "150+ Students | 50+ Parents | 2 Hours | Safety Tips Distributed",
     icon: "fa-graduation-cap",
@@ -100,10 +112,11 @@ const pastEvents = [
   {
     id: 3,
     title: "AWS Convent School - Cybersecurity Bootcamp",
+    image: "https://drive.google.com/file/d/15TFoOKr61QLkx24ESJ-yQOmwkobqmQdo/view?usp=drive_link",
     type: "Technical Training",
-    mode: "Uttar Pradesh  Completed",
+    mode: "Uttar Pradesh — Completed",
     date: "04 July 2025",
-    time: "11:00 AM - 1 PM IST",
+    time: "11:00 AM - 1:00 PM IST",
     location: "Lalganj, Mirzapur, Uttar Pradesh",
     meta: "120+ students participated, hands-on labs conducted, career awareness created",
     stats: "120+ Participants | Rural Area Initiative | Practical Labs | Career Guidance",
@@ -113,8 +126,9 @@ const pastEvents = [
   {
     id: 4,
     title: "Summer Cyber Camp 2025 - Pan-India",
+    image: "https://source.unsplash.com/800x600/?camp,summer,students",
     type: "Summer Program",
-    mode: "Multiple Cities  Completed",
+    mode: "Multiple Cities — Completed",
     date: "June 01 - July 31, 2025",
     time: "02:00 PM - 04:00 PM daily",
     location: "50+ Cities, 200+ Schools",
@@ -126,8 +140,9 @@ const pastEvents = [
   {
     id: 5,
     title: "National Digital Safety Month - 2025",
+    image: "https://source.unsplash.com/800x600/?awareness,campaign",
     type: "Awareness Campaign",
-    mode: "Pan-India  Completed",
+    mode: "Pan-India — Completed",
     date: "May 01 - May 31, 2025",
     time: "Various - School Hours",
     location: "300+ Educational Institutions",
@@ -139,8 +154,9 @@ const pastEvents = [
   {
     id: 6,
     title: "Teacher Certification Program - Cybersecurity Educators",
+    image: "https://source.unsplash.com/800x600/?online,training",
     type: "Educator Program",
-    mode: "Online  Completed",
+    mode: "Online — Completed",
     date: "Apr 01 - Apr 30, 2025",
     time: "06:00 PM - 07:30 PM IST",
     location: "Online Platform (Accessible Pan-India)",
@@ -152,8 +168,9 @@ const pastEvents = [
   {
     id: 7,
     title: "Youth Cyber Challenge - National CTF for Schools",
+    image: "https://source.unsplash.com/800x600/?competition,ctf",
     type: "Competition",
-    mode: "Online  Completed",
+    mode: "Online — Completed",
     date: "Mar 20 - Mar 22, 2025",
     time: "10:00 AM - 09:00 PM IST (72 hours)",
     location: "Online Platform - National Participation",
@@ -161,6 +178,163 @@ const pastEvents = [
     stats: "400+ Teams | 500+ Schools | 72 Hours | ₹5L Prize Pool",
     icon: "fa-flag-checkered",
     description: "National Capture The Flag competition for school and college students showcasing cybersecurity skills with real-world challenges."
+  }
+  ,
+  {
+    id: 8,
+    title: "SBV JJ Colony - School Awareness Session",
+    image: "https://drive.google.com/file/d/1yqVp-jqtljN8pohuE5sXBHjZ1CtSRYO-/view?usp=drive_link",
+    type: "School Workshop",
+    mode: "In-Person — Completed",
+    date: "13 July 2025",
+    time: "02:00 PM to 05:00 PM",
+    location: "Khichripur Village, East Delhi",
+    meta: "Local community outreach, hands-on activities",
+    stats: "Local Outreach | Parent Engagement",
+    icon: "fa-school",
+    sourceFile: "SBV JJ Colony - Khichripur",
+    description: "Community-focused digital safety session at SBV JJ Colony covering online risks and safe behaviour for students."
+  },
+  {
+    id: 9,
+    title: "WellIndia Corp Services Pvt Ltd - Workplace Session",
+    image: "https://drive.google.com/file/d/1Z80tWSAYrUCSaYdwukJ-ad5l73e_pQae/view?usp=drive_link",
+    type: "Corporate Workshop",
+    mode: "In-Person — Completed",
+    date: "25 June 2025",
+    time: "01:00 PM to 02:30 PM",
+    location: "Mayur Vihar Phase 1, East Delhi",
+    meta: "Employee awareness, incident response basics",
+    stats: "Corporate Training | Certificates",
+    icon: "fa-briefcase",
+    sourceFile: "WellIndia Corp Services Pvt. Ltd.",
+    description: "Tailored cybersecurity awareness session for corporate employees focusing on phishing and secure practices."
+  },
+  {
+    id: 10,
+    title: "Niev Institute Pvt. Ltd. - Student Outreach",
+    image: "https://drive.google.com/file/d/1kmWg0casQvRxJBrvkB85lf54L3dYOlOL/view?usp=drive_link",
+    type: "Industry-Academic",
+    mode: "In-Person — Completed",
+    date: "28 June 2025",
+    time: "03:30 PM to 04:30 PM",
+    location: "Mayur Vihar Phase 1, East Delhi",
+    meta: "Technical talk and awareness",
+    icon: "fa-building",
+    sourceFile: "Niev Institute Pvt. Ltd.",
+    description: "Awareness talk and practical demonstrations for students at Niev Institute."
+  },
+  {
+    id: 11,
+    title: "PW Gurukulam School - Cyber Safety",
+    image: "https://drive.google.com/file/d/1Mm5UzaJ17E27rhgbktVxBxVy9Q1Rn874/view?usp=drive_link",
+    type: "School Workshop",
+    mode: "In-Person — Completed",
+    date: "27 June 2025",
+    time: "10:00 AM to 12:00 PM",
+    location: "Gurugram",
+    meta: "Student-focused sessions and activities",
+    icon: "fa-graduation-cap",
+    sourceFile: "PW Gurukulam School - Gurugram",
+    description: "Hands-on cyber hygiene session for students at PW Gurukulam School."
+  },
+  {
+    id: 12,
+    title: "Dadasiya Village Outreach - Community Session",
+    image: "https://drive.google.com/file/d/13auGS2OKSNBZeCWUyJh60KEnzp17sTnw/view?usp=drive_link",
+    type: "Community Outreach",
+    mode: "In-Person — Completed",
+    date: "25 June 2025",
+    time: "04:00 PM to 06:00 PM",
+    location: "Dadasiya Village, Faridabad",
+    meta: "Rural awareness drive",
+    icon: "fa-people-roof",
+    sourceFile: "Dadasiya Village, Faridabad",
+    description: "Rural digital safety outreach covering foundational online safety topics."
+  },
+  {
+    id: 13,
+    title: "ITI College, Rewari - Student Workshop",
+    image: "https://drive.google.com/file/d/1V1zmqk_VaaSflkG9axj9efH1HzFuf99d/view?usp=drive_link",
+    type: "Technical Workshop",
+    mode: "In-Person — Completed",
+    date: "27 June 2025",
+    time: "02:30 PM to 05:00 PM",
+    location: "Rewari, Haryana",
+    meta: "Technical introduction and labs",
+    icon: "fa-laptop-code",
+    sourceFile: "ITI College, Rewari",
+    description: "Hands-on introduction to cybersecurity concepts for ITI students."
+  },
+  {
+    id: 14,
+    title: "MRIIRS Campus Faridabad - Workshop",
+    image: "https://drive.google.com/file/d/1rPi83dR_DSdF9MxxOQ0EOgQp8YwQhJ50/view?usp=drive_link",
+    type: "Academic Program",
+    mode: "In-Person — Completed",
+    date: "19 Aug 2025",
+    time: "02:00 PM",
+    location: "Faridabad, Haryana",
+    meta: "Campus workshop and awareness",
+    icon: "fa-university",
+    sourceFile: "MRIIRS Campus Faridabad",
+    description: "Campus-focused cybersecurity awareness and engagement activities."
+  },
+  {
+    id: 15,
+    title: "HackShastra - IIIT Delhi",
+    image: "https://drive.google.com/file/d/15fmDSclcKyjkv4aAQGFhymG4MO2vS6q9/view?usp=drive_link",
+    type: "Event",
+    mode: "In-Person — Completed",
+    date: "27 July 2025",
+    time: "12:00 PM to 01:00 PM",
+    location: "IIIT Delhi",
+    meta: "Event presence and demo sessions",
+    icon: "fa-microchip",
+    sourceFile: "HackShastra - IIIT Delhi",
+    description: "Participation in HackShastra with demo sessions and talks."
+  },
+  {
+    id: 16,
+    title: "DomainX @ Microsoft Noida - Awareness",
+    image: "https://drive.google.com/file/d/1-2K7m9RtQyWfZEeleNfFG44r3eGAl1Jz/view?usp=drive_link",
+    type: "Corporate Collaboration",
+    mode: "In-Person — Completed",
+    date: "26 July 2025",
+    time: "12:00 PM to 01:00 PM",
+    location: "Microsoft Noida",
+    meta: "Industry engagement",
+    icon: "fa-building",
+    sourceFile: "Microsoft Noida - DomainX",
+    description: "Short awareness session and networking at Microsoft Noida."
+  },
+  {
+    id: 17,
+    title: "NIET Greater Noida - Campus Session",
+    image: "https://drive.google.com/file/d/1NubGa4DwBU-TJxKoJIAmZ1GMmBajXFw4/view?usp=drive_link",
+    type: "Academic Workshop",
+    mode: "In-Person — Completed",
+    date: "22 Aug 2025",
+    time: "11:30 AM to 12:30 PM",
+    location: "Greater Noida",
+    meta: "Faculty and student engagement",
+    icon: "fa-chalkboard-user",
+    sourceFile: "NIET Greater Noida",
+    description: "Campus-level session addressing digital safety and career paths."
+  },
+  {
+    id: 18,
+    title: "Security in AI Summit - Delhi",
+    image: "https://drive.google.com/file/d/1RIbmyeH9BviRSgTXLmwRrtPp5aPbnbok/view?usp=drive_link",
+    type: "Summit",
+    mode: "In-Person — Completed",
+    date: "14 Dec 2025",
+    time: "Full day",
+    location: "Delhi",
+    meta: "Summit-level discussions on AI security",
+    icon: "fa-robot",
+    sourceFile: "Security in AI Summit",
+    description: "Panel discussions and talks focused on security in AI systems."
   }
 ];
 
@@ -177,6 +351,12 @@ function renderEvents() {
       const card = document.createElement("article");
       card.className = "event-card reveal";
       card.innerHTML = `
+        <div class="event-media">
+          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
+        </div>
+        <div class="event-media">
+          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
+        </div>
         <div class="event-tag">
           <i class="fa-solid ${ev.icon}"></i>
           <span>${ev.type}</span>
@@ -195,6 +375,9 @@ function renderEvents() {
       const card = document.createElement("article");
       card.className = "event-card reveal";
       card.innerHTML = `
+        <div class="event-media">
+          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
+        </div>
         <div class="event-tag">
           <i class="fa-solid ${ev.icon}"></i>
           <span>${ev.type}</span>

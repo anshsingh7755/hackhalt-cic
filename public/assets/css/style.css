@@ -720,6 +720,16 @@ body {
   gap: 0.3rem;
 }
 
+.event-media img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  display: block;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(148,163,184,0.06);
+}
+
 .event-tag {
   display: inline-flex;
   align-items: center;
@@ -802,6 +812,12 @@ body {
   width: 100%;
   height: 60px;
   object-fit: contain;
+}
+
+.logo-card img[alt] {
+  /* ensure placeholder and partner images are centered and not stretched */
+  display: block;
+  margin-bottom: 0.3rem;
 }
 
 .logo-card span {
