@@ -6,7 +6,7 @@ const upcomingEvents = [
   {
     id: 1,
     title: "Amity International School - Cybersecurity Awareness Workshop",
-    image: "images/amity-mayur-vihar.jpg",
+    image: "images/Amity school.jpg",
     type: "School Workshop",
     mode: "In-Person",
     date: "17 July 2025",
@@ -21,7 +21,7 @@ const upcomingEvents = [
   {
     id: 2,
     title: "ASN Secondary Public School - Digital Safety Program",
-    image: "images/asn-mayur-vihar.jpg",
+    image: "images/ASN School.jpg",
     type: "School Awareness",
     mode: "In-Person",
     date: "17 July 2025",
@@ -36,7 +36,7 @@ const upcomingEvents = [
   {
     id: 3,
     title: "AWS Convent School - Cybersecurity Bootcamp",
-    image: "images/aws-lalganj.jpg",
+    image: "images/AWS school.jpg",
     type: "Technical Training",
     mode: "In-Person",
     date: "04 July 2025",
@@ -83,7 +83,7 @@ const pastEvents = [
   {
     id: 1,
     title: "Amity International School - Cybersecurity Workshop",
-    image: "https://drive.google.com/file/d/1C8DRU4VCjc9GAvdhVzqZiTHTvSIXCmIT/view?usp=drive_link",
+    image: "images/Amity school.jpg",
     type: "School Workshop",
     mode: "Delhi — Completed",
     date: "17 July 2025",
@@ -98,7 +98,7 @@ const pastEvents = [
   {
     id: 2,
     title: "ASN Secondary Public School - Digital Literacy Drive",
-    image: "https://drive.google.com/file/d/10cHJMsUlNkCfxfq6uzjxCZVaM6eipnmc/view?usp=drive_link",
+    image: "images/ASN School.jpg",
     type: "Educational Initiative",
     mode: "Delhi — Completed",
     date: "17 July 2025",
@@ -112,7 +112,7 @@ const pastEvents = [
   {
     id: 3,
     title: "AWS Convent School - Cybersecurity Bootcamp",
-    image: "https://drive.google.com/file/d/15TFoOKr61QLkx24ESJ-yQOmwkobqmQdo/view?usp=drive_link",
+    image: "images/AWS school.jpg",
     type: "Technical Training",
     mode: "Uttar Pradesh — Completed",
     date: "04 July 2025",
@@ -183,7 +183,7 @@ const pastEvents = [
   {
     id: 8,
     title: "SBV JJ Colony - School Awareness Session",
-    image: "https://drive.google.com/file/d/1yqVp-jqtljN8pohuE5sXBHjZ1CtSRYO-/view?usp=drive_link",
+    image: "images/SBB JJ colony.jpg",
     type: "School Workshop",
     mode: "In-Person — Completed",
     date: "13 July 2025",
@@ -198,7 +198,7 @@ const pastEvents = [
   {
     id: 9,
     title: "WellIndia Corp Services Pvt Ltd - Workplace Session",
-    image: "https://drive.google.com/file/d/1Z80tWSAYrUCSaYdwukJ-ad5l73e_pQae/view?usp=drive_link",
+    image: "images/Wellindai corp.jpg",
     type: "Corporate Workshop",
     mode: "In-Person — Completed",
     date: "25 June 2025",
@@ -213,7 +213,7 @@ const pastEvents = [
   {
     id: 10,
     title: "Niev Institute Pvt. Ltd. - Student Outreach",
-    image: "https://drive.google.com/file/d/1kmWg0casQvRxJBrvkB85lf54L3dYOlOL/view?usp=drive_link",
+    image: "images/Niev campus.jpg",
     type: "Industry-Academic",
     mode: "In-Person — Completed",
     date: "28 June 2025",
@@ -227,7 +227,7 @@ const pastEvents = [
   {
     id: 11,
     title: "PW Gurukulam School - Cyber Safety",
-    image: "https://drive.google.com/file/d/1Mm5UzaJ17E27rhgbktVxBxVy9Q1Rn874/view?usp=drive_link",
+    image: "images/PW Gurukulam.jpg",
     type: "School Workshop",
     mode: "In-Person — Completed",
     date: "27 June 2025",
@@ -241,7 +241,7 @@ const pastEvents = [
   {
     id: 12,
     title: "Dadasiya Village Outreach - Community Session",
-    image: "https://drive.google.com/file/d/13auGS2OKSNBZeCWUyJh60KEnzp17sTnw/view?usp=drive_link",
+    image: "images/Dadasiya village.jpg",
     type: "Community Outreach",
     mode: "In-Person — Completed",
     date: "25 June 2025",
@@ -255,7 +255,7 @@ const pastEvents = [
   {
     id: 13,
     title: "ITI College, Rewari - Student Workshop",
-    image: "https://drive.google.com/file/d/1V1zmqk_VaaSflkG9axj9efH1HzFuf99d/view?usp=drive_link",
+    image: "images/ITI college, rewari.jpg",
     type: "Technical Workshop",
     mode: "In-Person — Completed",
     date: "27 June 2025",
@@ -269,7 +269,7 @@ const pastEvents = [
   {
     id: 14,
     title: "MRIIRS Campus Faridabad - Workshop",
-    image: "https://drive.google.com/file/d/1rPi83dR_DSdF9MxxOQ0EOgQp8YwQhJ50/view?usp=drive_link",
+    image: "images/MRIIRS campus.jpg",
     type: "Academic Program",
     mode: "In-Person — Completed",
     date: "19 Aug 2025",
@@ -283,7 +283,7 @@ const pastEvents = [
   {
     id: 15,
     title: "HackShastra - IIIT Delhi",
-    image: "https://drive.google.com/file/d/15fmDSclcKyjkv4aAQGFhymG4MO2vS6q9/view?usp=drive_link",
+    image: "images/Hackshastra-IIIT Delhi.jpg",
     type: "Event",
     mode: "In-Person — Completed",
     date: "27 July 2025",
@@ -297,7 +297,7 @@ const pastEvents = [
   {
     id: 16,
     title: "DomainX @ Microsoft Noida - Awareness",
-    image: "https://drive.google.com/file/d/1-2K7m9RtQyWfZEeleNfFG44r3eGAl1Jz/view?usp=drive_link",
+    image: "images/Microsoft noida.jpg",
     type: "Corporate Collaboration",
     mode: "In-Person — Completed",
     date: "26 July 2025",
@@ -311,7 +311,7 @@ const pastEvents = [
   {
     id: 17,
     title: "NIET Greater Noida - Campus Session",
-    image: "https://drive.google.com/file/d/1NubGa4DwBU-TJxKoJIAmZ1GMmBajXFw4/view?usp=drive_link",
+    image: "images/NIET.jpg",
     type: "Academic Workshop",
     mode: "In-Person — Completed",
     date: "22 Aug 2025",
@@ -325,7 +325,7 @@ const pastEvents = [
   {
     id: 18,
     title: "Security in AI Summit - Delhi",
-    image: "https://drive.google.com/file/d/1RIbmyeH9BviRSgTXLmwRrtPp5aPbnbok/view?usp=drive_link",
+    image: "images/Security in AI summit.jpg",
     type: "Summit",
     mode: "In-Person — Completed",
     date: "14 Dec 2025",
@@ -352,10 +352,7 @@ function renderEvents() {
       card.className = "event-card reveal";
       card.innerHTML = `
         <div class="event-media">
-          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
-        </div>
-        <div class="event-media">
-          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
+          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" crossorigin="anonymous" />
         </div>
         <div class="event-tag">
           <i class="fa-solid ${ev.icon}"></i>
@@ -376,7 +373,7 @@ function renderEvents() {
       card.className = "event-card reveal";
       card.innerHTML = `
         <div class="event-media">
-          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" />
+          <img src="${ev.image || 'images/event-placeholder.svg'}" alt="${ev.title} visual" crossorigin="anonymous" />
         </div>
         <div class="event-tag">
           <i class="fa-solid ${ev.icon}"></i>
