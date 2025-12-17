@@ -1462,7 +1462,7 @@ body {
 
 /* Partnership Cards */
 .partnership-card {
-  padding: 2rem;
+  padding: 1.6rem;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-lg);
@@ -1477,27 +1477,27 @@ body {
 }
 
 .partnership-card .icon-circle {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 1.5rem;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
   background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--color-primary);
 }
 
 .partnership-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
 
 .partnership-card p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 /* Quick nav card link */
@@ -1505,6 +1505,7 @@ body {
   text-decoration: none;
   color: inherit;
   transition: all var(--transition-default);
+  display: contents;
 }
 
 .quick-nav-card {
@@ -1952,14 +1953,14 @@ a:focus-visible {
 /* === EXPERTISE / SERVICES (optimized styles) ========================== */
 .expertise-grid {
   display: grid;
-  /* Professional 2x2 matrix layout for desktop */
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  /* Professional 4-column layout for desktop - all cards in one row */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
   margin: 2rem auto 0;
   align-items: stretch;
   justify-content: center;
   justify-items: stretch;
-  max-width: 1000px;
+  max-width: 100%;
   width: 100%;
 }
 
@@ -2044,7 +2045,7 @@ a:focus-visible {
 
 @media (max-width: 1024px) {
   .expertise-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
   }
 }
