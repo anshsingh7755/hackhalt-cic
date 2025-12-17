@@ -51,7 +51,7 @@ const upcomingEvents = [
   {
     id: 4,
     title: "National Cyber Awareness Campaign - Schools Edition",
-    image: "https://source.unsplash.com/800x600/?conference,stage",
+    image: "images/National Digital saftey month.jpg",
     type: "Pan-India Campaign",
     mode: "Multiple Locations",
     date: "Aug 15 - Sep 30, 2025",
@@ -65,7 +65,7 @@ const upcomingEvents = [
   {
     id: 5,
     title: "Teacher Training Workshop - Digital Security Curriculum",
-    image: "https://source.unsplash.com/800x600/?teacher,training",
+    image: "images/Teacher certification program.jpg",
     type: "Educator Program",
     mode: "Hybrid (Online + In-Person)",
     date: "Sep 01 - Sep 15, 2025",
@@ -126,7 +126,7 @@ const pastEvents = [
   {
     id: 4,
     title: "Summer Cyber Camp 2025 - Pan-India",
-    image: "https://source.unsplash.com/800x600/?camp,summer,students",
+    image: "images/summer cyber camp.jpg",
     type: "Summer Program",
     mode: "Multiple Cities — Completed",
     date: "June 01 - July 31, 2025",
@@ -140,7 +140,7 @@ const pastEvents = [
   {
     id: 5,
     title: "National Digital Safety Month - 2025",
-    image: "https://source.unsplash.com/800x600/?awareness,campaign",
+    image: "images/National Digital saftey month.jpg",
     type: "Awareness Campaign",
     mode: "Pan-India — Completed",
     date: "May 01 - May 31, 2025",
@@ -154,7 +154,7 @@ const pastEvents = [
   {
     id: 6,
     title: "Teacher Certification Program - Cybersecurity Educators",
-    image: "https://source.unsplash.com/800x600/?online,training",
+    image: "images/Teacher certification program.jpg",
     type: "Educator Program",
     mode: "Online — Completed",
     date: "Apr 01 - Apr 30, 2025",
@@ -168,7 +168,7 @@ const pastEvents = [
   {
     id: 7,
     title: "Youth Cyber Challenge - National CTF for Schools",
-    image: "https://source.unsplash.com/800x600/?competition,ctf",
+    image: "images/Youth cyber challenge.jpg",
     type: "Competition",
     mode: "Online — Completed",
     date: "Mar 20 - Mar 22, 2025",
