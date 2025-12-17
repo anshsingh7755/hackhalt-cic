@@ -407,6 +407,10 @@ body {
   border: 1px solid rgba(59, 130, 246, 0.3);
   box-shadow: 0 0 60px rgba(59, 130, 246, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .professional-hero::before {
@@ -417,23 +421,22 @@ body {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 50%);
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
 }
 
 .cybersecurity-bg {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-lg);
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.2);
-  z-index: 1;
-  filter: brightness(1.05) contrast(1.1);
+  object-position: center;
+  z-index: 0;
+  filter: brightness(0.85) contrast(1.2) saturate(1.1);
+  border-radius: var(--radius-lg);
 }
 
 .stats-overlay {
@@ -441,12 +444,13 @@ body {
   bottom: 1.6rem;
   left: 1.6rem;
   right: 1.6rem;
-  z-index: 2;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(10, 18, 40, 0.88) 100%);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  backdrop-filter: blur(10px);
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(10, 18, 40, 0.92) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  backdrop-filter: blur(12px);
   border-radius: var(--radius-lg);
-  padding: 1.2rem;
+  padding: 1.4rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 :root[data-theme="light"] .stats-overlay {
@@ -1201,6 +1205,17 @@ body {
     gap: 2.3rem;
   }
 
+  .professional-hero {
+    min-height: 350px;
+  }
+
+  .stats-overlay {
+    bottom: 1.2rem;
+    left: 1.2rem;
+    right: 1.2rem;
+    padding: 1rem;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1241,6 +1256,33 @@ body {
 @media (max-width: 768px) {
   .nav-toggle {
     display: flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .professional-hero {
+    min-height: 300px;
+  }
+
+  .stats-overlay {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 0.9rem;
+  }
+
+  .stat {
+    padding: 0.6rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-value {
+    font-size: 0.9rem;
   }
 
   .nav-links {
