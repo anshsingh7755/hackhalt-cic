@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community - HackHalt CIC</title>
+
+  <meta
+    name="description"
+    content="Join the HackHalt Community - Connect with cybersecurity professionals, students, and organizations across India."
+  />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <!-- ========== HEADER / NAV ========== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="/" class="logo-wrapper" aria-label="HackHalt CIC Home">
+        <img src="images/logo.png" alt="HackHalt CIC Logo" class="logo" />
+        <div class="logo-text">
+          <span class="logo-title">HackHalt</span>
+          <span class="logo-subtitle">Cyber Intelligence Council</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li>
+            <a href="/contact" class="btn btn-nav-cta">Join Us</a>
+          </li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle theme"
+        >
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero-section hero-section-alt">
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1>Join Our Community</h1>
+        <p>
+          Be part of a vibrant network of cybersecurity professionals, researchers, students, and organizations 
+          working together to secure India's digital future.
+        </p>
+        <div class="hero-actions">
+          <a href="#membership" class="btn btn-primary">Explore Membership</a>
+          <a href="#initiatives" class="btn btn-outline">Our Initiatives</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY OVERVIEW ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Why Join HackHalt Community?</h2>
+        <p>Access exclusive benefits, networking opportunities, and continuous learning resources</p>
+      </div>
+
+      <div class="community-benefits-grid">
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>Vibrant Network</h3>
+          <p>Connect with 5000+ cybersecurity professionals, researchers, and thought leaders across India</p>
+          <ul class="checklist">
+            <li>Monthly networking sessions</li>
+            <li>Industry introductions</li>
+            <li>Collaboration opportunities</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Continuous Learning</h3>
+          <p>Access curated training content, certifications, and advanced skill development programs</p>
+          <ul class="checklist">
+            <li>Weekly webinars & workshops</li>
+            <li>Certification paths</li>
+            <li>Expert mentorship</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Knowledge Sharing</h3>
+          <p>Contribute and access cutting-edge threat intelligence, research, and best practices</p>
+          <ul class="checklist">
+            <li>Threat intelligence feeds</li>
+            <li>Research publications</li>
+            <li>Case study library</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Career Growth</h3>
+          <p>Advance your cybersecurity career with opportunities for advancement and recognition</p>
+          <ul class="checklist">
+            <li>Job board access</li>
+            <li>Speaker opportunities</li>
+            <li>Leadership programs</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-shield-check"></i></div>
+          <h3>Compliance Support</h3>
+          <p>Stay updated on regulatory changes and receive guidance on compliance requirements</p>
+          <ul class="checklist">
+            <li>Compliance resources</li>
+            <li>Policy templates</li>
+            <li>Regulatory updates</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card reveal">
+          <div class="benefit-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Community Impact</h3>
+          <p>Make a difference by participating in community initiatives and outreach programs</p>
+          <ul class="checklist">
+            <li>Volunteer opportunities</li>
+            <li>Awareness campaigns</li>
+            <li>Social impact projects</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MEMBERSHIP TIERS ========== -->
+  <section id="membership" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Membership Options</h2>
+        <p>Choose the membership tier that best fits your role and goals</p>
+      </div>
+
+      <div class="membership-tiers">
+        <div class="tier-card reveal">
+          <div class="tier-badge">Popular</div>
+          <h3>Student Member</h3>
+          <p class="tier-price">Free</p>
+          <p class="tier-description">Perfect for students and entry-level professionals</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check"></i> Access to workshops & webinars</li>
+            <li><i class="fa-solid fa-check"></i> Community forum access</li>
+            <li><i class="fa-solid fa-check"></i> Monthly threat briefings</li>
+            <li><i class="fa-solid fa-check"></i> Networking events</li>
+            <li><i class="fa-solid fa-times"></i> Advanced training modules</li>
+            <li><i class="fa-solid fa-times"></i> Priority support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline btn-full">Join Now</a>
+        </div>
+
+        <div class="tier-card tier-featured reveal">
+          <div class="tier-badge">Best Value</div>
+          <h3>Professional Member</h3>
+          <p class="tier-price">₹2,499<span>/year</span></p>
+          <p class="tier-description">For active cybersecurity professionals</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check"></i> All Student benefits +</li>
+            <li><i class="fa-solid fa-check"></i> Advanced training & certifications</li>
+            <li><i class="fa-solid fa-check"></i> Priority access to events</li>
+            <li><i class="fa-solid fa-check"></i> Exclusive threat reports</li>
+            <li><i class="fa-solid fa-check"></i> 1-on-1 mentorship</li>
+            <li><i class="fa-solid fa-check"></i> Priority email support</li>
+          </ul>
+          <a href="/contact" class="btn btn-primary btn-full">Subscribe Now</a>
+        </div>
+
+        <div class="tier-card reveal">
+          <div class="tier-badge">Enterprise</div>
+          <h3>Organizational Member</h3>
+          <p class="tier-price">Custom</p>
+          <p class="tier-description">For institutions and organizations</p>
+          <ul class="tier-features">
+            <li><i class="fa-solid fa-check"></i> All Professional benefits +</li>
+            <li><i class="fa-solid fa-check"></i> Bulk team memberships</li>
+            <li><i class="fa-solid fa-check"></i> Custom training programs</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated account manager</li>
+            <li><i class="fa-solid fa-check"></i> Exclusive consulting hours</li>
+            <li><i class="fa-solid fa-check"></i> 24/7 premium support</li>
+          </ul>
+          <a href="/contact" class="btn btn-outline btn-full">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY INITIATIVES ========== -->
+  <section id="initiatives" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Community Initiatives & Programs</h2>
+        <p>Active programs driving cybersecurity awareness and excellence across India</p>
+      </div>
+
+      <div class="initiatives-grid">
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>CyberSecure Campus</h3>
+          <p>Bringing cybersecurity awareness to college campuses through workshops, competitions, and mentorship programs. Building the next generation of cybersecurity professionals.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-graduation-cap"></i> 50+ Institutions</span>
+            <span class="meta-tag"><i class="fa-solid fa-users"></i> 3000+ Students</span>
+          </div>
+        </div>
+
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>StartUp Security Hub</h3>
+          <p>Dedicated support for emerging startups to integrate security from day one. Providing affordable guidance, resources, and best practices for building secure products.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-rocket"></i> 200+ Startups</span>
+            <span class="meta-tag"><i class="fa-solid fa-shield"></i> Free Assessments</span>
+          </div>
+        </div>
+
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+          <h3>Research & Innovation Lab</h3>
+          <p>Collaborative space for cybersecurity researchers and practitioners to explore emerging threats, vulnerabilities, and innovative defense mechanisms.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-flask"></i> Active Research</span>
+            <span class="meta-tag"><i class="fa-solid fa-book"></i> 50+ Publications</span>
+          </div>
+        </div>
+
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-flag"></i></div>
+          <h3>Bug Bounty Program</h3>
+          <p>Secure collaboration platform for ethical hackers and security researchers to report vulnerabilities responsibly and earn recognition and rewards.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-coins"></i> Rewards Available</span>
+            <span class="meta-tag"><i class="fa-solid fa-check"></i> 500+ Reports</span>
+          </div>
+        </div>
+
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3>Awareness Campaigns</h3>
+          <p>Community-led awareness initiatives addressing cyber hygiene, phishing prevention, and digital safety for both urban and rural communities across India.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-globe"></i> Pan-India</span>
+            <span class="meta-tag"><i class="fa-solid fa-people-group"></i> 10K+ Reached</span>
+          </div>
+        </div>
+
+        <div class="initiative-card reveal">
+          <div class="initiative-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Industry Partnerships</h3>
+          <p>Collaborative partnerships with leading tech companies, consulting firms, and security vendors to provide exclusive resources and opportunities to our community.</p>
+          <div class="initiative-meta">
+            <span class="meta-tag"><i class="fa-solid fa-building"></i> 40+ Partners</span>
+            <span class="meta-tag"><i class="fa-solid fa-gift"></i> Exclusive Benefits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY STORIES ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Member Success Stories</h2>
+        <p>Real stories from community members who've grown their careers and expertise</p>
+      </div>
+
+      <div class="stories-grid">
+        <article class="story-card reveal">
+          <div class="story-header">
+            <div class="story-avatar">AK</div>
+            <div>
+              <h4>Arjun Kumar</h4>
+              <p>Security Analyst → CISO</p>
+            </div>
+          </div>
+          <p class="story-content">
+            "HackHalt's professional development program and mentorship accelerated my career growth. I went from a mid-level analyst to CISO in just 3 years through their structured training and networking opportunities."
+          </p>
+          <div class="story-meta">
+            <span><i class="fa-solid fa-star"></i> 5.0</span>
+            <span><i class="fa-solid fa-calendar"></i> Member since 2021</span>
+          </div>
+        </article>
+
+        <article class="story-card reveal">
+          <div class="story-header">
+            <div class="story-avatar">SM</div>
+            <div>
+              <h4>Sneha Mehta</h4>
+              <p>Founder, Security FirstAI</p>
+            </div>
+          </div>
+          <p class="story-content">
+            "The StartUp Security Hub provided invaluable guidance when we were building our cybersecurity product. Their resources helped us avoid critical mistakes and accelerate our go-to-market strategy."
+          </p>
+          <div class="story-meta">
+            <span><i class="fa-solid fa-star"></i> 5.0</span>
+            <span><i class="fa-solid fa-calendar"></i> Member since 2022</span>
+          </div>
+        </article>
+
+        <article class="story-card reveal">
+          <div class="story-header">
+            <div class="story-avatar">RV</div>
+            <div>
+              <h4>Ravi Verma</h4>
+              <p>Campus Ambassador, IIT Delhi</p>
+            </div>
+          </div>
+          <p class="story-content">
+            "As a campus ambassador, I've introduced cybersecurity to 200+ students. The support from HackHalt made it possible to run workshops, CTF competitions, and build a strong security club."
+          </p>
+          <div class="story-meta">
+            <span><i class="fa-solid fa-star"></i> 5.0</span>
+            <span><i class="fa-solid fa-calendar"></i> Member since 2023</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GET INVOLVED SECTION ========== -->
+  <section id="get-involved" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Ways to Get Involved</h2>
+        <p>Contribute your expertise and help build a more secure digital India</p>
+      </div>
+
+      <div class="involvement-grid">
+        <div class="involvement-card reveal">
+          <div class="involvement-number">01</div>
+          <h3>Become a Speaker</h3>
+          <p>Share your expertise in cybersecurity with our community through webinars, workshops, and conferences.</p>
+          <a href="/contact" class="link-btn">Apply Now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="involvement-card reveal">
+          <div class="involvement-number">02</div>
+          <h3>Volunteer as Mentor</h3>
+          <p>Guide and mentor the next generation of cybersecurity professionals through our structured mentorship program.</p>
+          <a href="/contact" class="link-btn">Join as Mentor <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="involvement-card reveal">
+          <div class="involvement-number">03</div>
+          <h3>Contribute Research</h3>
+          <p>Publish your cybersecurity research, findings, and insights with our community and broader audience.</p>
+          <a href="/contact" class="link-btn">Submit Research <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="involvement-card reveal">
+          <div class="involvement-number">04</div>
+          <h3>Host a Workshop</h3>
+          <p>Organize and conduct workshops on cybersecurity topics relevant to your local community or organization.</p>
+          <a href="/contact" class="link-btn">Host Workshop <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="involvement-card reveal">
+          <div class="involvement-number">05</div>
+          <h3>Partner with Us</h3>
+          <p>Collaborate as an organization to create mutual value and expand cybersecurity initiatives across India.</p>
+          <a href="/contact" class="link-btn">Discuss Partnership <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="involvement-card reveal">
+          <div class="involvement-number">06</div>
+          <h3>Join a Committee</h3>
+          <p>Participate in our advisory committees working on specific focus areas like governance, research, and policy.</p>
+          <a href="/contact" class="link-btn">Join Committee <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY STATS ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Growing Community by the Numbers</h2>
+        <p>Our impact across India's cybersecurity landscape</p>
+      </div>
+
+      <div class="community-stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-value">5000+</div>
+          <p>Active Members</p>
+          <span>Across all membership tiers</span>
+        </div>
+
+        <div class="stat-item reveal">
+          <div class="stat-value">50+</div>
+          <p>Institutions</p>
+          <span>Colleges & Universities</span>
+        </div>
+
+        <div class="stat-item reveal">
+          <div class="stat-value">200+</div>
+          <p>Startups & SMEs</p>
+          <span>In our network</span>
+        </div>
+
+        <div class="stat-item reveal">
+          <div class="stat-value">40+</div>
+          <p>Corporate Partners</p>
+          <span>Fortune 500 & leading firms</span>
+        </div>
+
+        <div class="stat-item reveal">
+          <div class="stat-value">500+</div>
+          <p>Events Hosted</p>
+          <span>Annually across India</span>
+        </div>
+
+        <div class="stat-item reveal">
+          <div class="stat-value">100K+</div>
+          <p>Lives Impacted</p>
+          <span>Through awareness & training</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMUNITY LEADERS & AMBASSADORS ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Meet Our Community Leaders & Ambassadors</h2>
+        <p>Dedicated professionals leading the cybersecurity movement across India</p>
+      </div>
+
+      <!-- Executive Leadership -->
+      <div class="reveal" style="margin-bottom: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.3rem; color: var(--color-primary);">
+          <i class="fa-solid fa-crown"></i> Executive Leadership
+        </h3>
+        <div class="team-grid-founders">
+          <div class="team-card founder-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/founder-1.jpg" alt="Executive Leader" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Founder & Chief Executive Officer</h4>
+              <p class="team-role">Strategic Vision & Community Leadership</p>
+              <p class="team-bio">Visionary leader with 20+ years in cybersecurity. Dedicated to building India's most trusted cyber intelligence community.</p>
+              <div class="team-expertise">
+                <span class="expertise-tag">Leadership</span>
+                <span class="expertise-tag">Strategy</span>
+                <span class="expertise-tag">Community</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card founder-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/founder-2.jpg" alt="Executive Leader" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Co-Founder & Research Director</h4>
+              <p class="team-role">Threat Intelligence & Research Leadership</p>
+              <p class="team-bio">Leading threat research initiatives and community knowledge sharing. 15+ years of cybersecurity expertise.</p>
+              <div class="team-expertise">
+                <span class="expertise-tag">Research</span>
+                <span class="expertise-tag">Intelligence</span>
+                <span class="expertise-tag">Mentorship</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="team-card founder-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/founder-3.jpg" alt="Executive Leader" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Co-Founder & Community Director</h4>
+              <p class="team-role">Community Growth & Engagement</p>
+              <p class="team-bio">Passionate about building inclusive, engaged communities. 12+ years in cybersecurity training and development.</p>
+              <div class="team-expertise">
+                <span class="expertise-tag">Community</span>
+                <span class="expertise-tag">Education</span>
+                <span class="expertise-tag">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Regional Ambassadors -->
+      <div class="reveal">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.3rem; color: var(--color-accent);">
+          <i class="fa-solid fa-map-location-dot"></i> Regional Ambassadors
+        </h3>
+        <div class="team-grid-members">
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-1.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>North Region Ambassador</h4>
+              <p class="team-role">Delhi & NCR Community Lead</p>
+              <p class="team-bio">Leads community initiatives and events across Northern India. Organizes monthly meetups and workshops.</p>
+            </div>
+          </div>
+
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-2.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>South Region Ambassador</h4>
+              <p class="team-role">Bangalore & Chennai Lead</p>
+              <p class="team-bio">Connects tech companies and startups in Southern India. Fosters industry partnerships and talent development.</p>
+            </div>
+          </div>
+
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-3.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>East Region Ambassador</h4>
+              <p class="team-role">Kolkata Community Lead</p>
+              <p class="team-bio">Building cybersecurity awareness in Eastern India. Connects academic institutions and local practitioners.</p>
+            </div>
+          </div>
+
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-4.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>West Region Ambassador</h4>
+              <p class="team-role">Mumbai & Pune Lead</p>
+              <p class="team-bio">Engages corporate sector and government institutions in Western India. Organizes high-impact events.</p>
+            </div>
+          </div>
+
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-5.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Academic Partnership Lead</h4>
+              <p class="team-role">Campus & Institute Relations</p>
+              <p class="team-bio">Connects academic institutions with HackHalt. Develops student engagement programs nationwide.</p>
+            </div>
+          </div>
+
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <img src="images/member-6.jpg" alt="Ambassador" class="team-image" />
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>StartUp Ecosystem Lead</h4>
+              <p class="team-role">Startup Security Initiative</p>
+              <p class="team-bio">Guides emerging startups on security practices. Facilitates security-first product development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CALL TO ACTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-block reveal">
+        <h2>Ready to Join HackHalt Community?</h2>
+        <p>
+          Start your journey towards cybersecurity excellence and connect with thousands of professionals across India.
+        </p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-primary">Join Today</a>
+          <a href="/about" class="btn btn-outline">Learn More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">HackHalt - CIC</span>
+        <p>
+          Building a safer digital tomorrow through intelligence, collaboration,
+          and continuous learning.
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/blogs">Blogs</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/partners">Partners</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Code of Conduct</a></li>
+          <li><a href="#">Terms of Collaboration</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Follow</h4>
+        <ul class="social-links">
+          <li><a href="https://www.linkedin.com/company/hack-halt/posts/?feedView=all" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/hackhalt/?hl=en" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
