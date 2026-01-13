@@ -22,8 +22,8 @@ function applyTheme(theme) {
   }
 }
 
-// Load saved theme or default to dark
-const savedTheme = localStorage.getItem("hh-theme") || "dark";
+// Load saved theme or default to light
+const savedTheme = localStorage.getItem("hh-theme") || "light";
 applyTheme(savedTheme);
 
 if (themeToggleBtn) {
@@ -44,6 +44,7 @@ const navLinks = document.getElementById("navLinks");
 if (yearSpan) {
   yearSpan.textContent = new Date().getFullYear();
 }
+
 
 // Back to top button
 window.addEventListener("scroll", () => {

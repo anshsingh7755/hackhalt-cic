@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,12 +44,35 @@
           <span></span><span></span><span></span>
         </button>
 
-        <ul class="nav-links" id="navLinks">
+        <!-- Primary Navigation (Top Row) -->
+        <ul class="nav-links nav-primary" id="navLinks">
           <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/community">Community</a></li>
-          <li><a href="/blogs">Blogs</a></li>
-          <li><a href="/events">Events</a></li>
+          <li class="nav-item-with-submenu">
+            <a href="/about">About Us</a>
+            <ul class="nav-submenu">
+              <li><a href="/about#mission">Mission & Vision</a></li>
+              <li><a href="/about#pillars">Core Pillars</a></li>
+              <li><a href="/about#team">Team</a></li>
+              <li><a href="/about">Organization</a></li>
+              <li><a href="/legal-compliance">Legal & Compliance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-with-submenu">
+            <a href="/community">Our Community</a>
+            <ul class="nav-submenu">
+              <li><a href="/community">Community Overview</a></li>
+              <li><a href="/events">Events & Outreach</a></li>
+              <li><a href="/blogs">Knowledge Base</a></li>
+            </ul>
+          </li>
+          <li class="nav-item-with-submenu">
+            <a href="/blogs">News</a>
+            <ul class="nav-submenu">
+              <li><a href="/blogs">Blog Posts</a></li>
+              <li><a href="/events">Events</a></li>
+              <li><a href="/partners">Partners</a></li>
+            </ul>
+          </li>
           <li><a href="/partners">Partners</a></li>
           <li><a href="/contact">Contact</a></li>
           <li>
@@ -64,7 +87,7 @@
           type="button"
           aria-label="Toggle theme"
         >
-          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
         </button>
       </nav>
     </div>
@@ -130,6 +153,184 @@
     </div>
   </section>
 
+  <!-- ========== LEGAL & COMPLIANCE SECTION ========== -->
+  <section class="section legal-compliance-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Legal & Compliance Information</h2>
+        <p>Transparency and accountability are at the heart of HackHalt. We are a registered Section 8 (Not-for-Profit) Company committed to governance, compliance, and public benefit.</p>
+      </div>
+
+      <div class="legal-info-grid reveal">
+        <div class="legal-info-card">
+          <div class="legal-info-icon">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3>Registration Status</h3>
+          <p>Incorporated as a Section 8 Company under the Companies Act, 2013, and registered with multiple government bodies.</p>
+          <a href="/legal-compliance" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="legal-info-card">
+          <div class="legal-info-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Data Protection</h3>
+          <p>We follow stringent data protection and privacy protocols to safeguard your information and ensure compliance with applicable laws.</p>
+          <a href="/legal-compliance" class="btn btn-outline btn-sm">View Details</a>
+        </div>
+
+        <div class="legal-info-card">
+          <div class="legal-info-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3>Transparency & Accountability</h3>
+          <p>Committed to transparent operations and public accountability through regular reporting and governance practices.</p>
+          <a href="/legal-compliance" class="btn btn-outline btn-sm">Explore</a>
+        </div>
+      </div>
+
+      <!-- Credentials Grid -->
+      <div class="credentials-showcase reveal" style="margin-top: 3rem; padding: 2.5rem; background: rgba(29, 78, 216, 0.05); border-radius: var(--border-radius-lg); border: 1px solid rgba(29, 78, 216, 0.1);">
+        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--color-primary);">Official Registration Details</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+          <div style="text-align: center;">
+            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">CIN</p>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">U94990DL2025NPL459178</p>
+            <a href="https://www.mca.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on MCA Portal</a>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">NITI Aayog Darpan</p>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">DL/2025/0920083</p>
+            <a href="https://darpan.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on Darpan</a>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">MSJE NGO Darpan</p>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">DL/00051452</p>
+            <a href="https://ngodarpan.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on NGO Portal</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA to Full Details -->
+      <div style="text-align: center; margin-top: 3rem;">
+        <p style="color: rgba(148, 163, 184, 0.8); margin-bottom: 1.5rem;">For comprehensive legal and compliance information, visit our dedicated page.</p>
+        <a href="/legal-compliance" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-file-lines"></i> View Full Legal & Compliance Page
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHAT'S NEW SECTION ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>What's New at HackHalt</h2>
+        <p>Latest updates, insights, and events from our community</p>
+      </div>
+
+      <!-- Featured Content Grid -->
+      <div class="whats-new-grid">
+        <!-- Featured Blog Post -->
+        <div class="featured-card featured-blog reveal">
+          <div class="featured-badge">Featured</div>
+          <div class="featured-image">
+            <i class="fa-solid fa-newspaper"></i>
+          </div>
+          <div class="featured-content">
+            <h3>Latest Cyber Threat Landscape</h3>
+            <p>Deep dive into emerging threats, attack vectors, and how organizations can strengthen their defense mechanisms in 2026.</p>
+            <div class="featured-meta">
+              <span class="meta-date">Jan 13, 2026</span>
+              <a href="/blogs" class="meta-link">Read More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Event -->
+        <div class="featured-card featured-event reveal">
+          <div class="featured-badge event-badge">Event</div>
+          <div class="featured-image event-image">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <div class="featured-content">
+            <h3>Cybersecurity Awareness Workshop</h3>
+            <p>Join our upcoming workshop on corporate cybersecurity best practices and policy frameworks for enterprises nationwide.</p>
+            <div class="featured-meta">
+              <span class="meta-date">Jan 20, 2026</span>
+              <a href="/events" class="meta-link">View Events →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resource Highlight -->
+        <div class="featured-card featured-resource reveal">
+          <div class="featured-badge resource-badge">Resource</div>
+          <div class="featured-image resource-image">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="featured-content">
+            <h3>Cyber Intelligence Report 2026</h3>
+            <p>Comprehensive analysis of cybersecurity trends, threat actors, and recommendations for securing critical infrastructure in India.</p>
+            <div class="featured-meta">
+              <span class="meta-date">Now Available</span>
+              <a href="/about" class="meta-link">Learn More →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Highlight -->
+        <div class="featured-card featured-community reveal">
+          <div class="featured-badge community-badge">Community</div>
+          <div class="featured-image community-image">
+            <i class="fa-solid fa-people-group"></i>
+          </div>
+          <div class="featured-content">
+            <h3>Join Our Growing Community</h3>
+            <p>Connect with cybersecurity professionals, researchers, and enthusiasts across India. Participate in discussions, CTFs, and collaborative initiatives.</p>
+            <div class="featured-meta">
+              <span class="meta-date">500+ Members</span>
+              <a href="/community" class="meta-link">Join Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Threat Advisory -->
+        <div class="featured-card featured-advisory reveal">
+          <div class="featured-badge advisory-badge">Advisory</div>
+          <div class="featured-image advisory-image">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <div class="featured-content">
+            <h3>December 2025 Threat Advisory</h3>
+            <p>Critical vulnerabilities identified in widespread applications. Organizations urged to patch systems immediately following our published guidance.</p>
+            <div class="featured-meta">
+              <span class="meta-date">Dec 28, 2025</span>
+              <a href="/blogs" class="meta-link">View Advisory →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partnership News -->
+        <div class="featured-card featured-partner reveal">
+          <div class="featured-badge partner-badge">Partnership</div>
+          <div class="featured-image partner-image">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <div class="featured-content">
+            <h3>New Strategic Partnerships Announced</h3>
+            <p>HackHalt partners with leading academic institutions and enterprises to expand cybersecurity training and research across India.</p>
+            <div class="featured-meta">
+              <span class="meta-date">Jan 10, 2026</span>
+              <a href="/partners" class="meta-link">See Partners →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== EXPERTISE / SERVICES (Optimized) ========== -->
   <section id="expertise" class="section">
     <div class="container">
@@ -188,6 +389,274 @@
             </div>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INITIATIVES & PROGRAMS SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Our Initiatives & Programs</h2>
+        <p>Specialized programs driving cybersecurity excellence across India</p>
+      </div>
+
+      <div class="initiatives-grid">
+        <!-- Initiative 1 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Cyber Awareness Program</h3>
+          <p>Comprehensive awareness campaigns targeting students, professionals, and communities on cyber hygiene and digital safety.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Interactive workshops</li>
+            <li><i class="fa-solid fa-check-circle"></i> Educational resources</li>
+            <li><i class="fa-solid fa-check-circle"></i> Certification tracks</li>
+          </ul>
+          <a href="/community" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <!-- Initiative 2 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>Threat Intelligence Hub</h3>
+          <p>Real-time threat analysis and actionable intelligence for enterprises and government agencies across critical infrastructure.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Real-time analysis</li>
+            <li><i class="fa-solid fa-check-circle"></i> Advisory reports</li>
+            <li><i class="fa-solid fa-check-circle"></i> Expert insights</li>
+          </ul>
+          <a href="/blogs" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <!-- Initiative 3 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-flask"></i></div>
+          <h3>Research & Innovation Lab</h3>
+          <p>Cutting-edge security research and innovation initiatives exploring emerging threats and defense mechanisms.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Academic partnerships</li>
+            <li><i class="fa-solid fa-check-circle"></i> Research papers</li>
+            <li><i class="fa-solid fa-check-circle"></i> Innovation grants</li>
+          </ul>
+          <a href="/about" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <!-- Initiative 4 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Skill Development</h3>
+          <p>Professional training and skill development programs for cybersecurity workforce across all experience levels.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Hands-on training</li>
+            <li><i class="fa-solid fa-check-circle"></i> Industry certification</li>
+            <li><i class="fa-solid fa-check-circle"></i> Career guidance</li>
+          </ul>
+          <a href="/events" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <!-- Initiative 5 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>Community Engagement</h3>
+          <p>Building bridges between academia, industry, government, and startups through collaborative initiatives and forums.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Networking events</li>
+            <li><i class="fa-solid fa-check-circle"></i> Collaboration opportunities</li>
+            <li><i class="fa-solid fa-check-circle"></i> Mentorship programs</li>
+          </ul>
+          <a href="/community" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <!-- Initiative 6 -->
+        <div class="initiative-card reveal">
+          <div class="init-icon"><i class="fa-solid fa-gavel"></i></div>
+          <h3>Policy & Governance</h3>
+          <p>Advising policymakers on cybersecurity frameworks, regulations, and governance best practices for critical sectors.</p>
+          <ul class="init-features">
+            <li><i class="fa-solid fa-check-circle"></i> Policy papers</li>
+            <li><i class="fa-solid fa-check-circle"></i> Regulatory guidance</li>
+            <li><i class="fa-solid fa-check-circle"></i> Government liaison</li>
+          </ul>
+          <a href="/about" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CENTERS OF EXCELLENCE SECTION ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Centers of Excellence (CoEs)</h2>
+        <p>Specialized hubs driving research, training, and innovation in cybersecurity</p>
+      </div>
+
+      <div class="coes-grid">
+        <!-- CoE 1 -->
+        <div class="coe-card reveal">
+          <div class="coe-header">
+            <div class="coe-icon"><i class="fa-solid fa-microscope"></i></div>
+            <h3>National Cybersecurity Research Center</h3>
+          </div>
+          <div class="coe-body">
+            <p>Advanced research initiatives in collaboration with academic institutions and government bodies for fundamental cybersecurity challenges.</p>
+            <div class="coe-focus">
+              <span class="focus-tag">Research</span>
+              <span class="focus-tag">Academia</span>
+              <span class="focus-tag">Innovation</span>
+            </div>
+          </div>
+          <a href="/about" class="coe-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- CoE 2 -->
+        <div class="coe-card reveal">
+          <div class="coe-header">
+            <div class="coe-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Secure Development CoE</h3>
+          </div>
+          <div class="coe-body">
+            <p>Enabling secure software development practices and application security training for enterprise development teams nationwide.</p>
+            <div class="coe-focus">
+              <span class="focus-tag">Development</span>
+              <span class="focus-tag">Training</span>
+              <span class="focus-tag">Enterprise</span>
+            </div>
+          </div>
+          <a href="/blogs" class="coe-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- CoE 3 -->
+        <div class="coe-card reveal">
+          <div class="coe-header">
+            <div class="coe-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Infrastructure Security CoE</h3>
+          </div>
+          <div class="coe-body">
+            <p>Specialized focus on securing critical infrastructure, OT systems, and industrial control systems across essential sectors.</p>
+            <div class="coe-focus">
+              <span class="focus-tag">Critical Infrastructure</span>
+              <span class="focus-tag">OT Security</span>
+              <span class="focus-tag">SCADA</span>
+            </div>
+          </div>
+          <a href="/events" class="coe-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- CoE 4 -->
+        <div class="coe-card reveal">
+          <div class="coe-header">
+            <div class="coe-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>Digital Forensics & Investigation CoE</h3>
+          </div>
+          <div class="coe-body">
+            <p>Expert capabilities in digital forensics, incident investigation, and evidence collection for law enforcement and enterprises.</p>
+            <div class="coe-focus">
+              <span class="focus-tag">Forensics</span>
+              <span class="focus-tag">Investigation</span>
+              <span class="focus-tag">Law Enforcement</span>
+            </div>
+          </div>
+          <a href="/community" class="coe-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FLAGSHIP EVENTS SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Flagship Events & CTFs</h2>
+        <p>Industry-leading conferences, workshops, and capture-the-flag competitions</p>
+      </div>
+
+      <div class="events-grid">
+        <div class="event-card reveal">
+          <div class="event-date">Quarterly</div>
+          <div class="event-icon"><i class="fa-solid fa-microphone"></i></div>
+          <h3>HackHalt Symposium</h3>
+          <p>Annual gathering of cybersecurity leaders, researchers, and professionals to discuss trends, threats, and innovations.</p>
+          <a href="/events" class="btn btn-primary btn-sm">Register Now</a>
+        </div>
+
+        <div class="event-card reveal">
+          <div class="event-date">Monthly</div>
+          <div class="event-icon"><i class="fa-solid fa-shield"></i></div>
+          <h3>Cyber Defense Challenge (CTF)</h3>
+          <p>Hands-on capture-the-flag competitions for professionals and students to test real-world security skills.</p>
+          <a href="/events" class="btn btn-primary btn-sm">Register Now</a>
+        </div>
+
+        <div class="event-card reveal">
+          <div class="event-date">Quarterly</div>
+          <div class="event-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3>Industry Roundtables</h3>
+          <p>Executive-level discussions on cybersecurity strategy, governance, and emerging threats impacting critical sectors.</p>
+          <a href="/events" class="btn btn-primary btn-sm">Register Now</a>
+        </div>
+
+        <div class="event-card reveal">
+          <div class="event-date">Bi-Annual</div>
+          <div class="event-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Campus Security Drives</h3>
+          <p>Awareness and training initiatives in colleges and universities building the next generation of security professionals.</p>
+          <a href="/events" class="btn btn-primary btn-sm">Register Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESOURCES & KNOWLEDGE BASE ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Resources & Knowledge Base</h2>
+        <p>Access curated reports, advisories, and educational materials</p>
+      </div>
+
+      <div class="resources-grid">
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-file-pdf"></i></div>
+          <h4>Research Reports</h4>
+          <p>In-depth analysis of cybersecurity trends, threat landscapes, and industry benchmarks</p>
+          <a href="/blogs" class="resource-link">View Reports →</a>
+        </div>
+
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h4>Security Advisories</h4>
+          <p>Timely warnings and guidance on critical vulnerabilities and active threats</p>
+          <a href="/blogs" class="resource-link">View Advisories →</a>
+        </div>
+
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-book"></i></div>
+          <h4>Educational Guides</h4>
+          <p>Comprehensive learning materials covering security fundamentals to advanced topics</p>
+          <a href="/blogs" class="resource-link">View Guides →</a>
+        </div>
+
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-video"></i></div>
+          <h4>Video Tutorials</h4>
+          <p>Expert-led video content on security tools, techniques, and best practices</p>
+          <a href="/blogs" class="resource-link">View Videos →</a>
+        </div>
+
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-newspaper"></i></div>
+          <h4>Blog & Articles</h4>
+          <p>Regular insights from our research team on emerging threats and solutions</p>
+          <a href="/blogs" class="resource-link">Read Blog →</a>
+        </div>
+
+        <div class="resource-item reveal">
+          <div class="resource-icon"><i class="fa-solid fa-toolbox"></i></div>
+          <h4>Tools & Templates</h4>
+          <p>Practical resources, templates, and tools for security professionals</p>
+          <a href="/about" class="resource-link">Explore Tools →</a>
+        </div>
       </div>
     </div>
   </section>
@@ -597,7 +1066,6 @@
       </div>
     </div>
   </section>
-
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     <div class="container footer-grid">
@@ -622,6 +1090,7 @@
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
+          <li><a href="/legal-compliance">Legal & Compliance</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Code of Conduct</a></li>
           <li><a href="#">Terms of Collaboration</a></li>
@@ -637,6 +1106,9 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved.</span>
+      <div class="compliance-footer">
+        <p>CIN: U94990DL2025NPL459178 | NITI Aayog: DL/2025/0920083 | MSJE: DL/00051452</p>
+      </div>
     </div>
   </footer>
 
