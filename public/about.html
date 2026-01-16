@@ -96,9 +96,9 @@
   <!-- ========== HERO SECTION ========== -->
   <section class="hero-section hero-section-alt">
     <div class="container">
-      <div class="hero-content reveal">
-        <h1>About HackHalt - Cyber Intelligence Council</h1>
-        <p>
+      <div class="hero-content reveal" style="text-align: center !important; max-width: 900px; margin: 0 auto;">
+        <h1 style="text-align: center; margin-bottom: 1.5rem;">About HackHalt - Cyber Intelligence Council</h1>
+        <p style="text-align: center; font-size: 1.1rem; line-height: 1.6;">
           HackHalt - CIC is a collaborative cyber initiative dedicated to building
           a secure and resilient digital ecosystem across India through
           awareness, capacity building, and actionable intelligence.
@@ -108,7 +108,7 @@
   </section>
 
   <!-- ========== ABOUT OVERVIEW ========== -->
-  <section class="section">
+  <section class="section" id="mission">
     <div class="container about-grid">
       <div class="about-card reveal">
         <h3>Our Mission</h3>
@@ -193,7 +193,7 @@
   </section>
 
   <!-- ========== FOUR PILLARS (EXPANDED) ========== -->
-  <section class="section">
+  <section class="section" id="pillars">
     <div class="container section-header reveal">
       <h2>Our Four Pillars of Excellence</h2>
       <p>
@@ -348,87 +348,94 @@
       </div>
 
       <div class="stat-card reveal">
-        <div class="stat-value-large">Pan-India</div>
-        <h3>National Reach</h3>
+        <div class="stat-value-large">Globally</div>
+        <h3>Global Reach</h3>
         <p>Remote-first model enabling engagement across all regions</p>
       </div>
     </div>
   </section>
 
   <!-- ========== LEADERSHIP & TEAM ========== -->
-  <section class="section">
+  <section class="section" id="team">
     <div class="container">
-      <div class="section-header reveal">
+      <div class="section-header reveal" style="text-align: center;">
         <h2>Meet Our Team & Founders</h2>
         <p>Experienced cybersecurity professionals and visionary leaders driving India's digital security initiative</p>
       </div>
 
-      <!-- Founders Section -->
+      <!-- Founders & Board Members Section -->
       <div class="reveal" style="margin-bottom: 3rem;">
-        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.4rem;">Founders & Leadership</h3>
-        <div class="team-grid-founders">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.4rem;">Founders & Board Members</h3>
+        <div class="team-grid-founders" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+          
+          <!-- Sonu Kumar -->
           <div class="team-card founder-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/founder-1.jpg" alt="Founder 1" class="team-image" />
+              <div style="width: 100%; height: 250px; background: rgba(37, 99, 235, 0.1); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 3rem; color: rgba(37, 99, 235, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://www.linkedin.com/in/cs-sonu7/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Founder & Chief Executive</h4>
-              <p class="team-role">Cybersecurity Visionary & Strategic Leader</p>
-              <p class="team-bio">20+ years in cybersecurity with expertise in threat intelligence, incident response, and policy advocacy.</p>
+              <h4>Sonu Kumar</h4>
+              <p class="team-role">Founder & Director</p>
+              <p class="team-bio">Cybersecurity visionary and strategic leader with 20+ years of expertise in threat intelligence, incident response, and policy advocacy.</p>
               <div class="team-expertise">
-                <span class="expertise-tag">OSINT</span>
                 <span class="expertise-tag">Leadership</span>
+                <span class="expertise-tag">Strategy</span>
                 <span class="expertise-tag">Policy</span>
               </div>
             </div>
           </div>
 
+          <!-- Veerpal Shakya -->
           <div class="team-card founder-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/founder-2.jpg" alt="Founder 2" class="team-image" />
+              <div style="width: 100%; height: 250px; background: rgba(37, 99, 235, 0.1); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 3rem; color: rgba(37, 99, 235, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://www.linkedin.com/in/veerpal-shakya/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Co-Founder & Chief Research Officer</h4>
-              <p class="team-role">Threat Intelligence & Research Expert</p>
-              <p class="team-bio">15+ years in security research, malware analysis, and digital forensics. Published researcher and speaker.</p>
+              <h4>Veerpal Shakya</h4>
+              <p class="team-role">Director & Social Worker</p>
+              <p class="team-bio">Community-focused leader dedicated to cybersecurity awareness and social responsibility across India with grassroots engagement.</p>
               <div class="team-expertise">
-                <span class="expertise-tag">DFIR</span>
-                <span class="expertise-tag">Research</span>
-                <span class="expertise-tag">Malware</span>
+                <span class="expertise-tag">Community</span>
+                <span class="expertise-tag">Outreach</span>
+                <span class="expertise-tag">Impact</span>
               </div>
             </div>
           </div>
 
+          <!-- Dr. Madhvi Singh -->
           <div class="team-card founder-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/founder-3.jpg" alt="Founder 3" class="team-image" />
+              <div style="width: 100%; height: 250px; background: rgba(37, 99, 235, 0.1); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 3rem; color: rgba(37, 99, 235, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                  <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://www.linkedin.com/in/dr-madhvi-singh-9b44a41bb/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Co-Founder & Head of Training</h4>
-              <p class="team-role">Cybersecurity Education & Capacity Building</p>
-              <p class="team-bio">12+ years training professionals and developing cybersecurity curriculum for educational institutions.</p>
+              <h4>Dr. Madhvi Singh</h4>
+              <p class="team-role">Advisory Board Member</p>
+              <p class="team-bio">Senior advisor bringing deep expertise in research, governance, and institutional collaboration for cybersecurity advancement.</p>
               <div class="team-expertise">
-                <span class="expertise-tag">Training</span>
-                <span class="expertise-tag">Education</span>
-                <span class="expertise-tag">Curriculum</span>
+                <span class="expertise-tag">Research</span>
+                <span class="expertise-tag">Advisory</span>
+                <span class="expertise-tag">Governance</span>
               </div>
             </div>
           </div>
@@ -439,101 +446,227 @@
       <div class="reveal">
         <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.4rem;">Core Team Members</h3>
         <div class="team-grid-members">
+          
+          <!-- Nidhi Nagar -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-1.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/nidhi-nagar-b68920328/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Senior Security Analyst</h4>
-              <p class="team-role">Threat Intelligence Division</p>
-              <p class="team-bio">Specializes in threat hunting and vulnerability assessment across the Indian cyber landscape.</p>
+              <h4>Nidhi Nagar</h4>
+              <p class="team-role">Cyber Security Intern</p>
+              <p class="team-bio">Passionate about cybersecurity fundamentals and emerging threat landscapes with focus on defensive strategies.</p>
             </div>
           </div>
 
+          <!-- Piyush Khajuria -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-2.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/piyush-khajuria-655963313/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Lead Trainer</h4>
-              <p class="team-role">Training & Education Division</p>
-              <p class="team-bio">Develops and delivers hands-on cybersecurity training programs for corporate and academic clients.</p>
+              <h4>Piyush Khajuria</h4>
+              <p class="team-role">Data Analyst Intern</p>
+              <p class="team-bio">Specializes in analyzing security data patterns and generating actionable insights from cybersecurity incidents and trends.</p>
             </div>
           </div>
 
+          <!-- Praharsh Singh -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-3.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/praharsh-singhh/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Community Manager</h4>
-              <p class="team-role">Community & Partnerships</p>
-              <p class="team-bio">Manages community initiatives, chapters, and strategic partnerships across India.</p>
+              <h4>Praharsh Singh</h4>
+              <p class="team-role">Security Researcher</p>
+              <p class="team-bio">Dedicated researcher focused on vulnerability discovery, malware analysis, and developing innovative security solutions.</p>
             </div>
           </div>
 
+          <!-- Jay Agrawal -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-4.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/jay-agrawal-towards-infinity/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Incident Response Lead</h4>
-              <p class="team-role">Research & Intelligence Division</p>
-              <p class="team-bio">Leads rapid incident response initiatives and digital forensics investigations.</p>
+              <h4>Jay Agrawal</h4>
+              <p class="team-role">Researcher</p>
+              <p class="team-bio">Research enthusiast exploring cutting-edge cybersecurity methodologies and contributing to threat intelligence initiatives.</p>
             </div>
           </div>
 
+          <!-- Divesh Khirne -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-5.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/divesh-khirne-095701337/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Policy & Governance Specialist</h4>
-              <p class="team-role">Operations & Governance</p>
-              <p class="team-bio">Advises on cybersecurity policy, compliance frameworks, and regulatory matters.</p>
+              <h4>Divesh Khirne</h4>
+              <p class="team-role">Content Specialist</p>
+              <p class="team-bio">Creates compelling cybersecurity content and educational materials that simplify complex security concepts for diverse audiences.</p>
             </div>
           </div>
 
+          <!-- Piyush Sinha -->
           <div class="team-card member-card reveal">
             <div class="team-image-wrapper">
-              <img src="images/member-6.jpg" alt="Team Member" class="team-image" />
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
               <div class="team-overlay">
                 <div class="social-links">
-                  <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/piyush-sinha-b4972b336/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
               </div>
             </div>
             <div class="team-info">
-              <h4>Research Analyst</h4>
-              <p class="team-role">Research & Intelligence Division</p>
-              <p class="team-bio">Conducts in-depth security research and publishes threat intelligence reports.</p>
+              <h4>Piyush Sinha</h4>
+              <p class="team-role">Researcher</p>
+              <p class="team-bio">Contributes to security research projects with expertise in threat modeling and incident response strategies.</p>
             </div>
           </div>
+
+          <!-- Amit Kumar -->
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/amit-kumar-155a742a4/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Amit Kumar</h4>
+              <p class="team-role">Researcher</p>
+              <p class="team-bio">Security researcher focused on advanced attack techniques and developing robust defensive mechanisms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CORE TEAM SECTION ========== -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="reveal">
+        <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.4rem;">Core Team</h3>
+        <div class="team-grid-members" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem;">
+          
+          <!-- Himanshu Singh -->
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/himanshu-singh-743a5a282/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Himanshu Singh</h4>
+              <p class="team-role">Core Team</p>
+              <p class="team-bio">Dedicated member of the core team contributing to HackHalt's strategic initiatives and cybersecurity excellence programs.</p>
+            </div>
+          </div>
+
+          <!-- Ankit -->
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/ankit-18489a28a/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Ankit</h4>
+              <p class="team-role">Core Team</p>
+              <p class="team-bio">Active contributor to HackHalt's initiatives with expertise in cybersecurity awareness and community engagement programs.</p>
+            </div>
+          </div>
+
+          <!-- Piyush Sinha -->
+          <div class="team-card member-card reveal">
+            <div class="team-image-wrapper">
+              <div style="width: 100%; height: 200px; background: rgba(15, 23, 42, 0.3); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-lg);">
+                <i class="fa-solid fa-image" style="font-size: 2.5rem; color: rgba(100, 116, 139, 0.3);"></i>
+              </div>
+              <div class="team-overlay">
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/piyush-sinha-b4972b336/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="team-info">
+              <h4>Piyush Sinha</h4>
+              <p class="team-role">Core Team</p>
+              <p class="team-bio">Key member of the core team contributing to research initiatives and cybersecurity advancement across India.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== REGIONAL AMBASSADORS ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Regional Ambassadors</h2>
+        <p>Coming Soon</p>
+      </div>
+
+      <div class="regional-ambassadors-placeholder reveal">
+        <div class="placeholder-content">
+          <i class="fa-solid fa-map-location-dot" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1.5rem;"></i>
+          <h3>Expanding Across India</h3>
+          <p>We are building a network of regional ambassadors to bring HackHalt closer to cybersecurity professionals in every corner of India.</p>
+          <p style="color: var(--color-text-muted); margin-top: 1rem;">Stay tuned for ambassador profiles and regional programs launching soon!</p>
+          <a href="/contact" class="btn btn-primary" style="margin-top: 1.5rem;">Express Interest</a>
         </div>
       </div>
     </div>
@@ -547,28 +680,50 @@
         <p>Registered and recognized by national government bodies in India</p>
       </div>
 
-      <div class="credentials-grid">
-        <div class="credential-card reveal">
-          <div class="credential-icon"><i class="fa-solid fa-certificate"></i></div>
-          <h3>Niti Aayog Darpan</h3>
-          <p class="credential-number">DL/2025/0920083</p>
-          <p class="credential-desc">Registered with the National Institution for Transforming India</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+        <!-- Niti Aayog Darpan Card -->
+        <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+          <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+            <i class="fa-solid fa-star" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+          </div>
+          <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">Niti Aayog Darpan</h3>
+          <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">DL/2025/0920083</p>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Registered with the National Institution for Transforming India</p>
+          <a href="https://darpan.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on Darpan</a>
         </div>
 
-        <div class="credential-card reveal">
-          <div class="credential-icon"><i class="fa-solid fa-building"></i></div>
-          <h3>MSJE NGO Registration</h3>
-          <p class="credential-number">DL/00051452</p>
-          <p class="credential-desc">Registered with Ministry of Social Justice & Empowerment</p>
+        <!-- Corporate Identity Number Card -->
+        <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+          <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+            <i class="fa-solid fa-globe" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+          </div>
+          <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">Corporate Identity Number</h3>
+          <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">U94990DL2025NPL459178</p>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">CIN registered with Ministry of Corporate Affairs</p>
+          <a href="https://www.mca.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on MCA Portal</a>
         </div>
 
-        <div class="credential-card reveal">
-          <div class="credential-icon"><i class="fa-solid fa-passport"></i></div>
-          <h3>Corporate Identity Number</h3>
-          <p class="credential-number">U94990DL2025NPL459178</p>
-          <p class="credential-desc">CIN registered with Ministry of Corporate Affairs</p>
+        <!-- MSME Udyam Registration Card -->
+        <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+          <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+            <i class="fa-solid fa-industry" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+          </div>
+          <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">MSME Udyam Registration</h3>
+          <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">UDYAM-DL-02-0107864</p>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Registered with Ministry of Micro, Small & Medium Enterprises</p>
+          <a href="https://udyamregistration.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on Udyam Portal</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CTA to Full Legal & Compliance Details -->
+  <section class="section">
+    <div class="container" style="text-align: center;">
+      <p style="color: rgba(148, 163, 184, 0.8); margin-bottom: 1.5rem; font-size: 1rem;">For comprehensive legal and compliance information, visit our dedicated page.</p>
+      <a href="/legal-compliance" class="btn btn-primary btn-lg" style="display: inline-block;">
+        <i class="fa-solid fa-file-lines"></i> View Full Legal & Compliance Page
+      </a>
     </div>
   </section>
 
@@ -589,8 +744,8 @@
 
         <div class="why-card reveal">
           <div class="why-icon"><i class="fa-solid fa-globe"></i></div>
-          <h3>Pan-India Reach</h3>
-          <p>Remote-first model with chapters across regions, enabling nationwide engagement and support</p>
+          <h3>Globally Reach</h3>
+          <p>Global engagement model with international presence, enabling worldwide collaboration and impact</p>
         </div>
 
         <div class="why-card reveal">
@@ -673,23 +828,40 @@
       </div>
 
       <!-- Official Credentials -->
-      <div class="credentials-showcase reveal" style="margin-top: 3rem; padding: 2.5rem; background: rgba(29, 78, 216, 0.05); border-radius: var(--border-radius-lg); border: 1px solid rgba(29, 78, 216, 0.1);">
-        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--color-primary);">Official Registration Credentials</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-          <div style="text-align: center;">
-            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">CIN (Corporate Identity Number)</p>
-            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">U94990DL2025NPL459178</p>
-            <a href="https://www.mca.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on MCA Portal</a>
+      <div style="margin-top: 3rem;">
+        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--color-primary); font-size: 1.5rem;">Official Registration Details</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+          <!-- Niti Aayog Darpan Card -->
+          <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+            <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fa-solid fa-star" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">Niti Aayog Darpan</h3>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">DL/2025/0920083</p>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Registered with National Non-Profit Government Portal for Transparency</p>
+            <a href="https://darpan.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on Darpan</a>
           </div>
-          <div style="text-align: center;">
-            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">NITI Aayog Darpan</p>
-            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">DL/2025/0920083</p>
-            <a href="https://darpan.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on Darpan</a>
+
+          <!-- Corporate Identity Number Card -->
+          <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+            <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fa-solid fa-globe" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">Corporate Identity Number</h3>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">U94990DL2025NPL459178</p>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">CIN registered with Ministry of Corporate Affairs</p>
+            <a href="https://www.mca.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on MCA Portal</a>
           </div>
-          <div style="text-align: center;">
-            <p style="color: rgba(148, 163, 184, 0.8); font-size: 0.9rem; margin-bottom: 0.5rem;">MSJE NGO Darpan</p>
-            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); font-size: 1.1rem; margin-bottom: 1rem;">DL/00051452</p>
-            <a href="https://ngodarpan.gov.in/" target="_blank" class="btn btn-outline btn-xs" style="width: fit-content; margin: 0 auto;">Verify on NGO Portal</a>
+
+          <!-- MSME Udyam Registration Card -->
+          <div class="reveal" style="padding: 2rem; border: 2px solid rgba(37, 99, 235, 0.3); border-radius: 1.5rem; background: rgba(37, 99, 235, 0.05); text-align: center;">
+            <div style="width: 80px; height: 80px; background: rgba(37, 99, 235, 0.15); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fa-solid fa-industry" style="font-size: 2.5rem; color: var(--color-primary);"></i>
+            </div>
+            <h3 style="margin-bottom: 1rem; color: var(--color-text-main);">MSME Udyam Registration</h3>
+            <p style="font-family: 'Courier New', monospace; font-weight: 600; color: var(--color-primary); margin-bottom: 1rem; font-size: 1rem;">UDYAM-DL-02-0107864</p>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Registered with Ministry of Micro, Small & Medium Enterprises</p>
+            <a href="https://udyamregistration.gov.in/" target="_blank" class="btn btn-outline" style="display: inline-block; padding: 0.6rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 2rem; color: white; text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease;">Verify on Udyam Portal</a>
           </div>
         </div>
       </div>
@@ -742,10 +914,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved.</span>
-      <div class="compliance-footer">
-        <p>CIN: U94990DL2025NPL459178 | NITI Aayog: DL/2025/0920083 | MSJE: DL/00051452</p>
-      </div>
+      <span>© <span id="year"></span> HackHalt - Cyber Intelligence Council. All rights reserved. | CIN: U94990DL2025NPL459178 | NITI Aayog: DL/2025/0920083 | MSME: UDYAM-DL-02-0107864</span>
     </div>
   </footer>
 

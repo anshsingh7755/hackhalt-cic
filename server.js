@@ -50,6 +50,14 @@ app.get("/legal-compliance", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "legal-compliance.html"));
 });
 
+app.get("/book-session", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "book-session.html"));
+});
+
+app.get("/add-blog", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "add-blog.html"));
+});
+
 // ========== API ENDPOINTS ==========
 
 // POST /api/contact - Handle contact form submissions

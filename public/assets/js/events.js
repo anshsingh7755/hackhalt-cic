@@ -56,26 +56,11 @@ const upcomingEvents = [
     mode: "Multiple Locations",
     date: "Aug 15 - Sep 30, 2025",
     time: "02:00 PM - 04:00 PM daily",
-    location: "500+ Schools Across India",
-    meta: "50,000+ students, digital literacy, cyberbullying awareness",
+    location: "50+ Schools Across India",
+    meta: "5,000+ students, digital literacy, cyberbullying awareness",
     description: "Nationwide campaign reaching schools to teach students about cybersecurity, digital rights, privacy protection, and responsible digital behavior.",
     speakers: ["Cybersecurity Educators", "Student Mentors"],
     icon: "fa-book"
-  },
-  {
-    id: 5,
-    title: "Teacher Training Workshop - Digital Security Curriculum",
-    image: "images/Teacher certification program.jpg",
-    type: "Educator Program",
-    mode: "Hybrid (Online + In-Person)",
-    date: "Sep 01 - Sep 15, 2025",
-    time: "10:00 AM - 12:00 PM",
-    location: "Multiple Cities / Online",
-    sourceFile: "Teacher Training Workshop - Curriculum",
-    meta: "500+ teachers trained, curriculum resources, certification",
-    description: "Training program for teachers to understand cybersecurity concepts and integrate digital safety education into school curricula.",
-    speakers: ["Curriculum Experts", "Security Practitioners"],
-    icon: "fa-chalkboard-user"
   }
 ];
 
@@ -131,9 +116,9 @@ const pastEvents = [
     mode: "Multiple Cities — Completed",
     date: "June 01 - July 31, 2025",
     time: "02:00 PM - 04:00 PM daily",
-    location: "50+ Cities, 200+ Schools",
-    meta: "25,000+ students, 500+ teachers, comprehensive digital literacy program",
-    stats: "25,000+ Students | 500+ Teachers | 50 Cities | 8 Weeks Duration",
+    location: "15+ Cities, 50+ Schools",
+    meta: "2,500+ students, 100+ teachers, comprehensive digital literacy program",
+    stats: "2,500+ Students | 100+ Teachers | 15 Cities | 8 Weeks Duration",
     icon: "fa-sun",
     description: "Summer-long digital security and cyber awareness program reaching students across multiple states during school break."
   },
@@ -145,9 +130,9 @@ const pastEvents = [
     mode: "Pan-India — Completed",
     date: "May 01 - May 31, 2025",
     time: "Various - School Hours",
-    location: "300+ Educational Institutions",
-    meta: "40,000+ participants, cybersecurity basics, phishing simulations, competitions",
-    stats: "40,000+ Students | 300+ Schools | CTF Competitions | 30 Days",
+    location: "75+ Educational Institutions",
+    meta: "10,000+ participants, cybersecurity basics, phishing simulations, competitions",
+    stats: "10,000+ Students | 75+ Schools | CTF Competitions | 30 Days",
     icon: "fa-shield",
     description: "Month-long national campaign promoting digital safety with interactive competitions, workshops, and awareness sessions in schools."
   },
@@ -160,8 +145,8 @@ const pastEvents = [
     date: "Apr 01 - Apr 30, 2025",
     time: "06:00 PM - 07:30 PM IST",
     location: "Online Platform (Accessible Pan-India)",
-    meta: "800+ teachers certified, curriculum resources provided, ongoing support",
-    stats: "800+ Teachers | 4 Weeks | Online Certification | Resource Library",
+    meta: "200+ teachers certified, curriculum resources provided, ongoing support",
+    stats: "200+ Teachers | 4 Weeks | Online Certification | Resource Library",
     icon: "fa-certificate",
     description: "Certification program enabling teachers to become cybersecurity awareness champions in their schools and communities."
   },
@@ -174,8 +159,8 @@ const pastEvents = [
     date: "Mar 20 - Mar 22, 2025",
     time: "10:00 AM - 09:00 PM IST (72 hours)",
     location: "Online Platform - National Participation",
-    meta: "400+ teams from 500+ schools, ₹5L prize pool, talent identification",
-    stats: "400+ Teams | 500+ Schools | 72 Hours | ₹5L Prize Pool",
+    meta: "100+ teams from 80+ schools, ₹1L prize pool, talent identification",
+    stats: "100+ Teams | 80+ Schools | 72 Hours | ₹1L Prize Pool",
     icon: "fa-flag-checkered",
     description: "National Capture The Flag competition for school and college students showcasing cybersecurity skills with real-world challenges."
   }
