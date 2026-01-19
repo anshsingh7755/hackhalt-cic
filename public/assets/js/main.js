@@ -91,6 +91,44 @@ if (navToggle && navLinks) {
   });
 }
 
+// Mobile submenu touch support
+const navItems = document.querySelectorAll(".nav-item-with-submenu");
+navItems.forEach((item) => {
+  const submenu = item.querySelector(".nav-submenu");
+  if (!submenu) return;
+
+  // Desktop: hover will handle it, mobile: click/touch will toggle
+  item.addEventListener("touchstart", (e) => {
+    // Prevent default hover behavior on touch
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      item.classList.toggle("open");
+    }
+  });
+
+  item.addEventListener("click", (e) => {
+    // On mobile, toggle submenu open state
+    if (window.innerWidth <= 768) {
+      const link = item.querySelector("a");
+      if (e.target === link || e.target.closest("a")) {
+        if (!item.classList.contains("open")) {
+          e.preventDefault();
+          item.classList.add("open");
+        }
+      }
+    }
+  });
+});
+
+// Close submenus when clicking outside
+document.addEventListener("click", (e) => {
+  if (window.innerWidth <= 768) {
+    if (!e.target.closest(".nav-item-with-submenu")) {
+      navItems.forEach((item) => item.classList.remove("open"));
+    }
+  }
+});
+
 // Smooth scroll with offset
 function smoothScroll(target, offset = 70) {
   const element = document.querySelector(target);
