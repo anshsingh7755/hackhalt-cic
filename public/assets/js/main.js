@@ -98,23 +98,24 @@ navItems.forEach((item) => {
   if (!submenu) return;
 
   // Desktop: hover will handle it, mobile: click/touch will toggle
-  item.addEventListener("touchstart", (e) => {
-    // Prevent default hover behavior on touch
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      item.classList.toggle("open");
-    }
-  });
-
   item.addEventListener("click", (e) => {
     // On mobile, toggle submenu open state
     if (window.innerWidth <= 768) {
-      const link = item.querySelector("a");
-      if (e.target === link || e.target.closest("a")) {
-        if (!item.classList.contains("open")) {
-          e.preventDefault();
-          item.classList.add("open");
-        }
+      const link = item.querySelector("> a");
+      // Only prevent default if clicking the parent link, not submenu items
+      if (e.target === link) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close other open submenus
+        navItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.classList.remove("open");
+          }
+        });
+        
+        // Toggle current submenu
+        item.classList.toggle("open");
       }
     }
   });
