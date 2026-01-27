@@ -673,20 +673,17 @@
       allBlogs.push(newBlog);
       localStorage.setItem('userBlogs', JSON.stringify(allBlogs));
 
-      // Show success message
-      const successMsg = document.getElementById('successMessage');
-      successMsg.classList.add('show');
+      // Show success message with thank you
+      Notification.success('✨ Thank You! Your blog has been submitted successfully! It will appear on the site once approved.');
+      
+      // Also show alert for maximum visibility
+      alert('✨ Thank You! Your blog has been submitted successfully! It will appear on the site once approved.');
 
       // Reset form
       form.reset();
       tags = [];
       renderTags();
       updatePreview();
-
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMsg.classList.remove('show');
-      }, 5000);
 
       // Optionally redirect to blogs page
       // setTimeout(() => {

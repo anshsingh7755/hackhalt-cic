@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minimal Test</title>
+  <style>
+    body { font-family: monospace; padding: 20px; }
+    #log { border: 2px solid blue; padding: 10px; min-height: 300px; background: #f0f0f0; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>TEST: Form Submit Behavior</h1>
+  
+  <form id="testForm">
+    <input type="text" name="test" value="Test" required>
+    <button type="submit">Submit</button>
+  </form>
+  
+  <h2>Event Log:</h2>
+  <div id="log"></div>
+
+  <script>
+    const log = document.getElementById('log');
+    
+    function addLog(msg) {
+      const line = document.createElement('div');
+      line.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      log.appendChild(line);
+      console.log(msg);
+    }
+    
+    addLog('Script started');
+    
+    const form = document.getElementById('testForm');
+    addLog('Form element found: ' + (form ? 'YES' : 'NO'));
+    
+    form.addEventListener('submit', (e) => {
+      addLog('📌 SUBMIT EVENT FIRED');
+      addLog('Before preventDefault()');
+      e.preventDefault();
+      addLog('After preventDefault() - form should NOT refresh');
+      
+      // Wait a moment then show alert
+      setTimeout(() => {
+        addLog('Showing alert...');
+        alert('THANK YOU MESSAGE');
+        addLog('Alert shown');
+      }, 500);
+      
+      return false;
+    });
+    
+    addLog('Submit handler attached');
+  </script>
+</body>
+</html>

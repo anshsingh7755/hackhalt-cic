@@ -75,6 +75,9 @@
           <li><a href="/partners">Partners</a></li>
           <li><a href="/contact">Contact</a></li>
           <li>
+            <a href="/admin-login" target="_blank" rel="noopener noreferrer" class="btn btn-nav-secondary">Admin Login</a>
+          </li>
+          <li>
             <a href="/contact" class="btn btn-nav-cta">Join Us</a>
           </li>
         </ul>
@@ -169,57 +172,111 @@
         </div>
       </div>
 
-      <div class="contact-form-wrapper reveal">
-        <h3>Send us a Message</h3>
-        <form id="contactForm" class="form">
-          <div class="form-group">
-            <label for="nameContact">Name</label>
-            <input
-              type="text"
-              id="nameContact"
-              name="name"
-              placeholder="Your name"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="emailContact">Email</label>
-            <input
-              type="email"
-              id="emailContact"
-              name="email"
-              placeholder="you@example.com"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="subjectContact">Subject</label>
-            <input
-              type="text"
-              id="subjectContact"
-              name="subject"
-              placeholder="Subject of your message"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="messageContact">Message</label>
-            <textarea
-              id="messageContact"
-              name="message"
-              rows="4"
-              placeholder="Your message..."
-              required
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-outline btn-full">
-            Send Message
-          </button>
-          <p class="form-footnote">
-            This demo form logs messages to the browser console. In production,
-            integrate with email or a ticketing system.
-          </p>
-        </form>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 3rem;">
+        <div class="contact-form-wrapper reveal">
+          <h3>Send us a Message</h3>
+          <form id="contactForm" class="form" onsubmit="console.log('🔴 INLINE onsubmit FIRED!'); return false;">
+            <div class="form-group">
+              <label for="nameContact">Name</label>
+              <input
+                type="text"
+                id="nameContact"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="emailContact">Email</label>
+              <input
+                type="email"
+                id="emailContact"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phoneContact">Phone</label>
+              <input
+                type="tel"
+                id="phoneContact"
+                name="phone"
+                placeholder="Your phone number"
+              />
+            </div>
+            <div class="form-group">
+              <label for="subjectContact">Subject</label>
+              <input
+                type="text"
+                id="subjectContact"
+                name="subject"
+                placeholder="Subject of your message"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="messageContact">Message</label>
+              <textarea
+                id="messageContact"
+                name="message"
+                rows="4"
+                placeholder="Your message..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline btn-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-form-wrapper reveal">
+          <h3>Join Our Initiative</h3>
+          <form id="joinForm" class="form" onsubmit="console.log('🔴 INLINE onsubmit FIRED!'); return false;">
+            <div class="form-group">
+              <label for="nameJoin">Name</label>
+              <input
+                type="text"
+                id="nameJoin"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="emailJoin">Email</label>
+              <input
+                type="email"
+                id="emailJoin"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="organizationJoin">Organization</label>
+              <input
+                type="text"
+                id="organizationJoin"
+                name="organization"
+                placeholder="Your organization (optional)"
+              />
+            </div>
+            <div class="form-group">
+              <label for="interestsJoin">Areas of Interest</label>
+              <textarea
+                id="interestsJoin"
+                name="interests"
+                rows="4"
+                placeholder="Tell us about your interests, skills, or how you'd like to contribute..."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline btn-full">
+              Join Us
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </section>

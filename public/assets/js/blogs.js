@@ -124,11 +124,27 @@ const modalMeta = document.getElementById("modalMeta");
 const modalContent = document.getElementById("modalContent");
 const modalClose = document.getElementById("modalClose");
 
+function formatBlogContent(content) {
+  if (!content) return '';
+  
+  // Split by double newlines or blank lines to create paragraphs
+  const paragraphs = content.split(/\n\s*\n/).filter(p => p.trim());
+  
+  // Wrap each paragraph in <p> tags and format
+  return paragraphs
+    .map(para => `<p class="blog-paragraph">${para.trim()}</p>`)
+    .join('');
+}
+
 function openBlogModal(blog) {
   if (!blogModal) return;
   modalTitle.textContent = blog.title || "";
-  modalMeta.textContent = `${blog.date} • ${blog.readTime} • ${blog.author || ""}`;
-  modalContent.textContent = blog.content || blog.excerpt || "";
+  modalMeta.textContent = `${blog.date} • ${blog.readTime} • By ${blog.author || "Anonymous"}`;
+  
+  // Use proper HTML formatting for content
+  const formattedContent = formatBlogContent(blog.content || blog.excerpt || "");
+  modalContent.innerHTML = formattedContent || `<p>${blog.excerpt || ""}</p>`;
+  
   blogModal.classList.remove("hidden");
   // prevent background scroll
   document.documentElement.style.overflow = 'hidden';

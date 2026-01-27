@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Test - Direct API Testing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: Arial;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #log {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-left: 4px solid #007bff;
+      max-height: 400px;
+      overflow-y: auto;
+      font-family: monospace;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .log-entry {
+      margin: 0.25rem 0;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid #eee;
+    }
+    .success { color: green; font-weight: bold; }
+    .error { color: red; font-weight: bold; }
+    .info { color: blue; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧪 Form API Test Tool</h1>
+    <p>This page tests form submissions directly to the API endpoints.</p>
+    
+    <form id="testForm">
+      <div class="form-group">
+        <label for="testName">Name:</label>
+        <input type="text" id="testName" name="name" value="Test User" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="testEmail">Email:</label>
+        <input type="email" id="testEmail" name="email" value="test@example.com" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="testPhone">Phone:</label>
+        <input type="text" id="testPhone" name="phone" value="1234567890">
+      </div>
+      
+      <div class="form-group">
+        <label for="testSubject">Subject:</label>
+        <input type="text" id="testSubject" name="subject" value="Test Subject" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="testMessage">Message:</label>
+        <textarea id="testMessage" name="message" rows="4" required>This is a test message with more than 10 characters to pass validation</textarea>
+      </div>
+      
+      <button type="submit">🚀 Submit Test Form</button>
+    </form>
+    
+    <h3>📋 Console Output:</h3>
+    <div id="log"></div>
+  </div>
+
+  <script>
+    const logDiv = document.getElementById('log');
+    
+    function addLog(message, type = 'info') {
+      const entry = document.createElement('div');
+      entry.className = `log-entry ${type}`;
+      const timestamp = new Date().toLocaleTimeString();
+      entry.textContent = `[${timestamp}] ${message}`;
+      logDiv.appendChild(entry);
+      logDiv.scrollTop = logDiv.scrollHeight;
+      console.log(`[${type.toUpperCase()}] ${message}`);
+    }
+    
+    document.getElementById('testForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      addLog('🚀 Form submission started', 'info');
+      
+      const formData = {
+        name: document.getElementById('testName').value,
+        email: document.getElementById('testEmail').value,
+        phone: document.getElementById('testPhone').value,
+        subject: document.getElementById('testSubject').value,
+        message: document.getElementById('testMessage').value
+      };
+      
+      addLog('📦 Form Data: ' + JSON.stringify(formData), 'info');
+      
+      try {
+        addLog('🔌 Sending POST to /api/contact...', 'info');
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        addLog(`📡 Response Status: ${response.status} ${response.statusText}`, 'info');
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+          addLog('✅ SUCCESS! Response: ' + JSON.stringify(data), 'success');
+          addLog('🎉 Form submission was successful!', 'success');
+          document.getElementById('testForm').reset();
+        } else {
+          addLog('❌ FAILED! Error: ' + (data.error || 'Unknown error'), 'error');
+        }
+      } catch (error) {
+        addLog('💥 EXCEPTION: ' + error.message, 'error');
+        addLog('Stack: ' + error.stack, 'error');
+      }
+    });
+    
+    // Initial log
+    addLog('🟢 Page loaded. Ready for testing.', 'success');
+    addLog('📍 Current URL: ' + window.location.href, 'info');
+    addLog('🔗 API endpoint: /api/contact', 'info');
+  </script>
+</body>
+</html>

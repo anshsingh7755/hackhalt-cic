@@ -201,7 +201,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.05rem 0;
+  padding: 1.05rem 0 1.05rem 10%;
   gap: 1.4rem;
 }
 
@@ -1988,6 +1988,19 @@ main::before {
 #modalContent {
   font-size: 0.9rem;
   color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.blog-paragraph {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.blog-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .modal-close {

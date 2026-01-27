@@ -93,7 +93,7 @@
 
           <div class="pillar-card reveal" style="grid-column:1/-1;">
             <h3>Request a Session</h3>
-            <form id="bookingForm" class="form">
+            <form id="bookingForm" class="form" onsubmit="console.log('🔴 BOOKING FORM SUBMIT!'); return false;">
               <div class="form-group">
                 <label for="nameBooking">Full name</label>
                 <input id="nameBooking" name="name" type="text" required />
@@ -179,13 +179,60 @@
   <script src="assets/js/utils.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    // Demo booking form handler
-    document.getElementById('bookingForm')?.addEventListener('submit', function (e) {
+    // Booking form handler with API integration
+    document.getElementById('bookingForm')?.addEventListener('submit', async function (e) {
+      console.log('🔴 BOOKING FORM SUBMIT EVENT FIRED!');
       e.preventDefault();
-      const data = Object.fromEntries(new FormData(e.target).entries());
-      console.log('Booking request:', data);
-      alert('Request submitted — check console (demo). We will contact you with availability.');
-      e.target.reset();
+      e.stopPropagation();
+      
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+      console.log('📦 Booking data:', data);
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      
+      try {
+        console.log('🚀 Sending POST to /api/book-session');
+        const response = await fetch('/api/book-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        console.log('✅ Response status:', response.status);
+        console.log('📊 Response:', result);
+        
+        if (response.ok) {
+          console.log('✨ SUCCESS! Showing thank you...');
+          
+          const thankYouMsg = '✨ Thank you for your booking request! We will contact you with availability and next steps.';
+          
+          // Show notification
+          if (typeof Notification !== 'undefined') {
+            Notification.success(thankYouMsg, 6000);
+          }
+          
+          // Show alert
+          console.log('🚨 Showing alert');
+          alert(thankYouMsg);
+          
+          // Reset form
+          form.reset();
+          console.log('✅ Booking submitted successfully!');
+        } else {
+          throw new Error(result.error || 'Failed to submit booking');
+        }
+      } catch (error) {
+        console.error('❌ Booking error:', error);
+        alert('Error: ' + error.message);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
     });
   </script>
 </body>

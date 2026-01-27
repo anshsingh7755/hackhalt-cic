@@ -152,16 +152,16 @@ const Notification = {
     return icons[type] || icons.info;
   },
 
-  success(message) {
-    this.show(message, 'success');
+  success(message, duration = 4000) {
+    this.show(message, 'success', duration);
   },
 
-  error(message) {
-    this.show(message, 'error', 5000);
+  error(message, duration = 5000) {
+    this.show(message, 'error', duration);
   },
 
-  warning(message) {
-    this.show(message, 'warning');
+  warning(message, duration = 4000) {
+    this.show(message, 'warning', duration);
   }
 };
 
