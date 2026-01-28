@@ -17,17 +17,30 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// CORS configuration for Vercel
+// CORS configuration for Vercel - FIXED for production
 app.use((req, res, next) => {
   const origin = req.headers.origin || '';
+  const isProduction = process.env.NODE_ENV === 'production';
+  
+  // Build allowed origins list
   const allowedOrigins = [
     'http://localhost:3000',
     'http://localhost:5000',
-    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : '',
-    process.env.FRONTEND_URL || ''
-  ].filter(Boolean);
-
-  if (allowedOrigins.includes(origin) || process.env.NODE_ENV === 'production') {
+    'http://localhost',
+  ];
+  
+  // Add Vercel URL if available
+  if (process.env.VERCEL_URL) {
+    allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
+  }
+  
+  // Add custom frontend URL if set
+  if (process.env.FRONTEND_URL) {
+    allowedOrigins.push(process.env.FRONTEND_URL);
+  }
+  
+  // Allow same-origin requests and all origins in production (served from same domain)
+  if (allowedOrigins.includes(origin) || !origin || isProduction) {
     res.header('Access-Control-Allow-Origin', origin || '*');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');

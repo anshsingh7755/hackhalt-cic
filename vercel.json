@@ -1,11 +1,6 @@
 {
   "version": 2,
   "buildCommand": "npm install",
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "JWT_SECRET": "@jwt_secret",
-    "NODE_ENV": "production"
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -19,7 +14,7 @@
   "functions": {
     "server.js": {
       "memory": 1024,
-      "maxDuration": 30
+      "maxDuration": 60
     }
   },
   "public": true
