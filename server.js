@@ -101,6 +101,33 @@ app.get("/blog-admin", (req, res) => {
 
 // ========== API ENDPOINTS ==========
 
+// GET /api/health - Health check endpoint
+app.get("/api/health", async (req, res) => {
+  try {
+    const mongoStatus = require('mongoose').connection.readyState;
+    // 0: disconnected, 1: connected, 2: connecting, 3: disconnecting
+    const mongoStatusText = {
+      0: 'disconnected',
+      1: 'connected',
+      2: 'connecting',
+      3: 'disconnecting'
+    }[mongoStatus] || 'unknown';
+
+    res.json({
+      success: true,
+      message: "Server is running",
+      mongodb: mongoStatusText,
+      environment: process.env.NODE_ENV || 'development',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
 // ========== ADMIN AUTHENTICATION ==========
 
 // POST /api/admin/login - Admin login
@@ -185,10 +212,23 @@ app.post("/api/admin/login", async (req, res) => {
       }
     });
   } catch (error) {
-    console.error("Error during admin login:", error);
+    console.error("Error during admin login:", error.message);
+    console.error("Error stack:", error.stack);
+    
+    // Provide more specific error messages for debugging
+    let errorMessage = "Failed to process login";
+    if (error.message.includes('connect')) {
+      errorMessage = "Database connection error - MongoDB may not be accessible";
+    } else if (error.message.includes('ENOTFOUND')) {
+      errorMessage = "Cannot connect to database server";
+    } else if (error.message.includes('ECONNREFUSED')) {
+      errorMessage = "Database connection refused";
+    }
+    
     res.status(500).json({
       success: false,
-      error: "Failed to process login"
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 });

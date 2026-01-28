@@ -1,33 +1,49 @@
 const mongoose = require('mongoose');
 
-// Connect to MongoDB Atlas
-const connectDB = async () => {
+// Connect to MongoDB Atlas with retry logic
+const connectDB = async (retries = 3) => {
   try {
     const mongoURI = process.env.MONGODB_URI;
     
     if (!mongoURI) {
-      throw new Error('MONGODB_URI is not defined in .env file. Please add your MongoDB Atlas connection string.');
+      throw new Error('MONGODB_URI is not defined in environment variables. Please add your MongoDB Atlas connection string.');
     }
 
+    console.log('🔄 Connecting to MongoDB Atlas...');
+    
     const conn = await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      serverSelectionTimeoutMS: 5000,
+      socketTimeoutMS: 45000,
+      family: 4 // Use IPv4, skip trying IPv6
     });
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     return conn;
   } catch (error) {
     console.error('❌ MongoDB Connection Error:', error.message);
-    console.error('\n📌 To fix this:');
-    console.error('1. Go to https://www.mongodb.com/cloud/atlas (create free account if needed)');
-    console.error('2. Create a new project and cluster');
-    console.error('3. Get your connection string from "Connect" button');
-    console.error('4. Update MONGODB_URI in .env file with your connection string');
-    console.error('5. Replace <password> and database name in the URI');
-    console.error('6. Restart the server\n');
     
-    // Don't exit process, allow app to run with warning
-    console.warn('⚠️  Server running without database. Form submissions will not be saved.');
+    if (retries > 0) {
+      console.log(`⏳ Retrying connection (${retries} attempts left)...`);
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 seconds before retry
+      return connectDB(retries - 1);
+    }
+    
+    console.error('\n📌 To fix MongoDB connection:');
+    console.error('1. Go to MongoDB Atlas: https://cloud.mongodb.com/');
+    console.error('2. Click Network Access (left sidebar)');
+    console.error('3. Allow access from 0.0.0.0/0 (or add Vercel IP specifically)');
+    console.error('4. Verify MONGODB_URI environment variable is set correctly');
+    console.error('5. Check that password and username in connection string are correct\n');
+    
+    // On production, this is a critical error
+    if (process.env.NODE_ENV === 'production') {
+      console.error('🚨 CRITICAL: MongoDB connection failed on production!');
+      console.error('Login will not work until MongoDB is accessible.');
+    } else {
+      console.warn('⚠️  Server running without database in development mode.');
+    }
   }
 };
 
