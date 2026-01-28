@@ -46,6 +46,83 @@ app.use(express.static(path.join(__dirname, "public")));
 // Connect to MongoDB
 connectDB();
 
+// Auto-initialize admin user if corrupted or missing
+async function initializeAdminUser() {
+  try {
+    const bcrypt = require('bcryptjs');
+    
+    // Give MongoDB a moment to connect
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    const admin = await Admin.findOne({ username: 'admin' }).select('+password');
+    
+    if (!admin || !admin.password || !admin.password.startsWith('$2')) {
+      console.log('🔧 Admin user missing or corrupted. Reinitializing...');
+      
+      // Delete old admin if exists
+      if (admin) {
+        await Admin.deleteOne({ username: 'admin' });
+      }
+      
+      // Create new admin with properly hashed password
+      const password = 'HackHalt@2025';
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+      
+      await Admin.collection.insertOne({
+        username: 'admin',
+        email: 'admin@hackhalt.com',
+        password: hashedPassword,
+        role: 'super-admin',
+        isActive: true,
+        createdAt: new Date()
+      });
+      
+      console.log('✅ Admin user reinitialized successfully');
+      console.log('   Username: admin');
+      console.log('   Password: HackHalt@2025');
+    } else {
+      // Verify password works
+      try {
+        const isValid = await admin.comparePassword('HackHalt@2025');
+        if (isValid) {
+          console.log('✅ Admin user verified - password is valid');
+        } else {
+          console.log('⚠️  Admin user exists but password is invalid. Resetting...');
+          const password = 'HackHalt@2025';
+          const salt = await bcrypt.genSalt(10);
+          const hashedPassword = await bcrypt.hash(password, salt);
+          
+          await Admin.updateOne(
+            { username: 'admin' },
+            { password: hashedPassword }
+          );
+          
+          console.log('✅ Admin password reset to HackHalt@2025');
+        }
+      } catch (verifyError) {
+        console.log('⚠️  Admin password verification failed. Resetting...');
+        const password = 'HackHalt@2025';
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+        
+        await Admin.updateOne(
+          { username: 'admin' },
+          { password: hashedPassword }
+        );
+        
+        console.log('✅ Admin password reset to HackHalt@2025');
+      }
+    }
+  } catch (error) {
+    console.error('⚠️  Failed to initialize admin user:', error.message);
+    // Don't fail startup if admin init fails
+  }
+}
+
+// Run initialization after a short delay to let MongoDB connect
+setTimeout(initializeAdminUser, 2000);
+
 // Routes for multi-page website
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
