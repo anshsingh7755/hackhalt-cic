@@ -358,14 +358,17 @@
     }
 
     .btn-edit {
-      background: var(--primary-light);
-      color: var(--primary-color);
+      background: #3b82f6;
+      color: white;
+      border: 1px solid #2563eb;
+      font-weight: 600;
     }
 
     .btn-edit:hover {
-      background: var(--primary-color);
+      background: #2563eb;
       color: white;
       transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
     }
 
     .btn-delete {
@@ -895,6 +898,9 @@
               <td>${createdDate}</td>
               <td>
                 <div class="blog-actions">
+                  <button class="btn-edit" onclick="viewBlog('${blog._id}')">
+                    <i class="fa-solid fa-eye"></i> View
+                  </button>
                   <button class="btn-edit" onclick="editBlog('${blog._id}')">
                     <i class="fa-solid fa-edit"></i> Edit
                   </button>
@@ -919,9 +925,91 @@
       }
     }
 
-    // Edit blog (placeholder)
+    // View blog details
+    function viewBlog(blogId) {
+      fetch('/api/submissions/blogs?limit=100')
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            const blog = data.submissions.find(b => b._id === blogId);
+            if (blog) {
+              let content = '';
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-heading" style="margin-right: 0.5rem;"></i>Title</div>
+                <div class="submission-detail-value">${blog.title}</div>
+              </div>`;
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-user" style="margin-right: 0.5rem;"></i>Author</div>
+                <div class="submission-detail-value">${blog.author || 'Anonymous'}</div>
+              </div>`;
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-tag" style="margin-right: 0.5rem;"></i>Category</div>
+                <div class="submission-detail-value">${blog.category || 'General'}</div>
+              </div>`;
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-bars" style="margin-right: 0.5rem;"></i>Excerpt</div>
+                <div class="submission-detail-value">${blog.excerpt || 'No excerpt'}</div>
+              </div>`;
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-file-lines" style="margin-right: 0.5rem;"></i>Content</div>
+                <div class="submission-detail-value" style="max-height: 300px; overflow-y: auto; white-space: pre-wrap;">${blog.content || 'No content'}</div>
+              </div>`;
+              
+              if (blog.tags && blog.tags.length > 0) {
+                content += `<div class="submission-detail">
+                  <div class="submission-detail-label"><i class="fa-solid fa-hashtag" style="margin-right: 0.5rem;"></i>Tags</div>
+                  <div class="submission-detail-value">${blog.tags.join(', ')}</div>
+                </div>`;
+              }
+              
+              const date = new Date(blog.createdAt).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              });
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-calendar" style="margin-right: 0.5rem;"></i>Created</div>
+                <div class="submission-detail-value">${date}</div>
+              </div>`;
+              
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-circle-check" style="margin-right: 0.5rem;"></i>Status</div>
+                <div class="submission-detail-value">${blog.isPublished ? '✓ Published' : 'Draft'}</div>
+              </div>`;
+              
+              showBlogModal(content, blog, false);
+            }
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching blog:', err);
+          Notification.error('Failed to load blog details');
+        });
+    }
+
+    // Edit blog
     function editBlog(blogId) {
-      alert('Edit functionality coming soon! Blog ID: ' + blogId);
+      fetch('/api/submissions/blogs?limit=100')
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            const blog = data.submissions.find(b => b._id === blogId);
+            if (blog) {
+              showEditBlogModal(blog);
+            }
+          }
+        })
+        .catch(err => {
+          console.error('Error fetching blog:', err);
+          Notification.error('Failed to load blog for editing');
+        });
     }
 
     // Delete blog
@@ -994,8 +1082,7 @@
         message.classList.remove('error');
         message.classList.add('show', 'success');
         
-        // Also show alert for maximum visibility
-        alert('✨ Thank You! Your blog has been published successfully!');
+        Notification.success('✨ Thank You! Your blog has been published successfully!');
 
         document.getElementById('addBlogForm').reset();
         document.getElementById('excerptCount').textContent = '0';
@@ -1135,21 +1222,78 @@
           if (data.success) {
             const submission = data.submissions.find(s => s._id === submissionId);
             if (submission) {
-              let content = `<strong>Name:</strong> ${submission.name}\n`;
-              content += `<strong>Email:</strong> ${submission.email}\n`;
+              let content = '';
+              
+              // Name
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-user" style="margin-right: 0.5rem;"></i>Name</div>
+                <div class="submission-detail-value">${submission.name}</div>
+              </div>`;
+              
+              // Email
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-envelope" style="margin-right: 0.5rem;"></i>Email</div>
+                <div class="submission-detail-value"><a href="mailto:${submission.email}" style="color: var(--primary-color); text-decoration: none;">${submission.email}</a></div>
+              </div>`;
               
               if (type === 'contact') {
-                content += `<strong>Phone:</strong> ${submission.phone || 'N/A'}\n`;
-                content += `<strong>Subject:</strong> ${submission.subject}\n`;
-                content += `<strong>Message:</strong>\n${submission.message}`;
+                // Phone
+                if (submission.phone) {
+                  content += `<div class="submission-detail">
+                    <div class="submission-detail-label"><i class="fa-solid fa-phone" style="margin-right: 0.5rem;"></i>Phone</div>
+                    <div class="submission-detail-value">${submission.phone}</div>
+                  </div>`;
+                }
+                
+                // Subject
+                content += `<div class="submission-detail">
+                  <div class="submission-detail-label"><i class="fa-solid fa-heading" style="margin-right: 0.5rem;"></i>Subject</div>
+                  <div class="submission-detail-value">${submission.subject}</div>
+                </div>`;
+                
+                // Message
+                content += `<div class="submission-detail">
+                  <div class="submission-detail-label"><i class="fa-solid fa-message" style="margin-right: 0.5rem;"></i>Message</div>
+                  <div class="submission-detail-value">${submission.message.replace(/\n/g, '<br>')}</div>
+                </div>`;
               } else {
-                content += `<strong>Organization:</strong> ${submission.organization || 'N/A'}\n`;
-                content += `<strong>Interests:</strong> ${submission.interests || 'N/A'}`;
+                // Organization
+                if (submission.organization) {
+                  content += `<div class="submission-detail">
+                    <div class="submission-detail-label"><i class="fa-solid fa-building" style="margin-right: 0.5rem;"></i>Organization</div>
+                    <div class="submission-detail-value">${submission.organization}</div>
+                  </div>`;
+                }
+                
+                // Interests
+                if (submission.interests) {
+                  content += `<div class="submission-detail">
+                    <div class="submission-detail-label"><i class="fa-solid fa-star" style="margin-right: 0.5rem;"></i>Interests</div>
+                    <div class="submission-detail-value">${submission.interests}</div>
+                  </div>`;
+                }
               }
               
-              alert(content);
+              // Date
+              const date = new Date(submission.createdAt).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+              });
+              content += `<div class="submission-detail">
+                <div class="submission-detail-label"><i class="fa-solid fa-calendar" style="margin-right: 0.5rem;"></i>Submitted On</div>
+                <div class="submission-detail-value">${date}</div>
+              </div>`;
+              
+              showSubmissionModal(content);
             }
           }
+        })
+        .catch(err => {
+          console.error('Error fetching submission:', err);
+          Notification.error('Failed to load submission details');
         });
     }
 
@@ -1184,5 +1328,299 @@
     loadDashboard();
     loadSubmissions();
   </script>
-</body>
-</html>
+
+  <!-- Submission View Modal -->
+  <style>
+    .submission-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .submission-modal.show {
+      display: flex;
+    }
+
+    .submission-modal-content {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 600px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      position: relative;
+      border: 1px solid var(--border-color);
+    }
+
+    .submission-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-secondary);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .submission-modal-close:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .submission-modal-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+    }
+
+    .submission-detail {
+      margin-bottom: 1.5rem;
+    }
+
+    .submission-detail-label {
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .submission-detail-value {
+      color: var(--text-primary);
+      line-height: 1.6;
+      word-break: break-word;
+      padding: 0.75rem;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      border-left: 3px solid var(--primary-color);
+    }
+
+    .submission-modal-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .btn-close-modal {
+      flex: 1;
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-close-modal:hover {
+      background: var(--border-color);
+    }
+  </style>
+
+  <div id="submissionModal" class="submission-modal">
+    <div class="submission-modal-content">
+      <button class="submission-modal-close" onclick="closeSubmissionModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2 class="submission-modal-title">Submission Details</h2>
+      <div id="submissionDetails"></div>
+      <div class="submission-modal-actions">
+        <button class="btn-close-modal" onclick="closeSubmissionModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function closeSubmissionModal() {
+      document.getElementById('submissionModal').classList.remove('show');
+    }
+
+    function showSubmissionModal(content) {
+      document.getElementById('submissionDetails').innerHTML = content;
+      document.getElementById('submissionModal').classList.add('show');
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeSubmissionModal();
+        closeBlogModal();
+        closeEditBlogModal();
+      }
+    });
+
+    // Close modal on backdrop click
+    document.getElementById('submissionModal').addEventListener('click', (e) => {
+      if (e.target.id === 'submissionModal') {
+        closeSubmissionModal();
+      }
+    });
+
+    // Blog modals
+    function closeBlogModal() {
+      document.getElementById('blogModal').classList.remove('show');
+    }
+
+    function closeEditBlogModal() {
+      document.getElementById('editBlogModal').classList.remove('show');
+    }
+
+    function showBlogModal(content, blog, isEdit = false) {
+      document.getElementById('blogDetails').innerHTML = content;
+      const modal = document.getElementById('blogModal');
+      const editBtn = modal.querySelector('.btn-edit-from-modal');
+      if (editBtn) {
+        editBtn.onclick = () => {
+          closeBlogModal();
+          editBlog(blog._id);
+        };
+      }
+      modal.classList.add('show');
+    }
+
+    function showEditBlogModal(blog) {
+      const form = document.getElementById('editBlogForm');
+      document.getElementById('editBlogId').value = blog._id;
+      document.getElementById('editBlogTitle').value = blog.title;
+      document.getElementById('editBlogAuthor').value = blog.author || '';
+      document.getElementById('editBlogCategory').value = blog.category || '';
+      document.getElementById('editBlogExcerpt').value = blog.excerpt || '';
+      document.getElementById('editBlogContent').value = blog.content || '';
+      document.getElementById('editBlogTags').value = blog.tags ? blog.tags.join(', ') : '';
+      
+      document.getElementById('editBlogModal').classList.add('show');
+    }
+
+    function saveBlogChanges() {
+      const blogId = document.getElementById('editBlogId').value;
+      const updatedBlog = {
+        title: document.getElementById('editBlogTitle').value,
+        author: document.getElementById('editBlogAuthor').value,
+        category: document.getElementById('editBlogCategory').value,
+        excerpt: document.getElementById('editBlogExcerpt').value,
+        content: document.getElementById('editBlogContent').value,
+        tags: document.getElementById('editBlogTags').value.split(',').map(t => t.trim()).filter(t => t)
+      };
+
+      fetch(`/api/submissions/blogs/${blogId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedBlog)
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          Notification.success('Blog updated successfully!');
+          closeEditBlogModal();
+          loadManageBlogs();
+        } else {
+          Notification.error(data.error || 'Failed to update blog');
+        }
+      })
+      .catch(err => {
+        console.error('Error updating blog:', err);
+        Notification.error('Failed to update blog');
+      });
+    }
+
+    document.getElementById('editBlogModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'editBlogModal') {
+        closeEditBlogModal();
+      }
+    });
+  </script>
+
+  <!-- Blog View Modal -->
+  <div id="blogModal" class="submission-modal">
+    <div class="submission-modal-content">
+      <button class="submission-modal-close" onclick="closeBlogModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2 class="submission-modal-title">Blog Details</h2>
+      <div id="blogDetails"></div>
+      <div class="submission-modal-actions">
+        <button class="btn-close-modal btn-edit-from-modal" onclick="null">
+          <i class="fa-solid fa-edit" style="margin-right: 0.5rem;"></i>Edit Blog
+        </button>
+        <button class="btn-close-modal" onclick="closeBlogModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog Edit Modal -->
+  <div id="editBlogModal" class="submission-modal">
+    <div class="submission-modal-content" style="max-width: 800px;">
+      <button class="submission-modal-close" onclick="closeEditBlogModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h2 class="submission-modal-title">Edit Blog</h2>
+      <form id="editBlogForm" style="max-height: 60vh; overflow-y: auto;">
+        <input type="hidden" id="editBlogId">
+        
+        <div class="submission-detail">
+          <label class="submission-detail-label">Title</label>
+          <input type="text" id="editBlogTitle" placeholder="Blog title" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;">
+        </div>
+
+        <div class="submission-detail">
+          <label class="submission-detail-label">Author</label>
+          <input type="text" id="editBlogAuthor" placeholder="Author name" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;">
+        </div>
+
+        <div class="submission-detail">
+          <label class="submission-detail-label">Category</label>
+          <select id="editBlogCategory" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;">
+            <option value="">Select Category</option>
+            <option value="threats">Threat Intel</option>
+            <option value="awareness">Awareness</option>
+            <option value="policy">Policy & Governance</option>
+          </select>
+        </div>
+
+        <div class="submission-detail">
+          <label class="submission-detail-label">Excerpt</label>
+          <textarea id="editBlogExcerpt" rows="2" placeholder="Short excerpt" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;"></textarea>
+        </div>
+
+        <div class="submission-detail">
+          <label class="submission-detail-label">Content</label>
+          <textarea id="editBlogContent" rows="8" placeholder="Full blog content" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;"></textarea>
+        </div>
+
+        <div class="submission-detail">
+          <label class="submission-detail-label">Tags (comma-separated)</label>
+          <input type="text" id="editBlogTags" placeholder="tag1, tag2, tag3" style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; margin-top: 0.5rem;">
+        </div>
+      </form>
+      <div class="submission-modal-actions">
+        <button class="btn-close-modal" onclick="saveBlogChanges()" style="background: #22c55e; color: white;">
+          <i class="fa-solid fa-save" style="margin-right: 0.5rem;"></i>Save Changes
+        </button>
+        <button class="btn-close-modal" onclick="closeEditBlogModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+

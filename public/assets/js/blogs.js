@@ -56,13 +56,36 @@ searchInput?.addEventListener("input", (e) => {
     blog.title.toLowerCase().includes(query) || blog.excerpt.toLowerCase().includes(query)
   );
   blogsGrid.innerHTML = "";
-  filtered.forEach((blog) => createBlogCard(blog));
+  
+  if (filtered.length === 0) {
+    blogsGrid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--color-text-secondary);">
+        <i class="fa-solid fa-magnifying-glass" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+        <p style="font-size: 1.1rem;">No results found for "<strong style="color: var(--color-text-primary);">${query}</strong>"</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try different keywords or browse by category.</p>
+      </div>
+    `;
+  } else {
+    filtered.forEach((blog) => createBlogCard(blog));
+  }
 });
 
 // Render
 function renderBlogs() {
   const filtered = activeFilter === "all" ? allBlogs : allBlogs.filter((b) => b.category === activeFilter);
   blogsGrid.innerHTML = "";
+  
+  if (filtered.length === 0) {
+    blogsGrid.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1rem; color: var(--color-text-secondary);">
+        <i class="fa-solid fa-search" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+        <p style="font-size: 1.1rem;">No blogs found in this category.</p>
+        <p style="font-size: 0.9rem; margin-top: 0.5rem;">Try selecting a different category or searching for keywords.</p>
+      </div>
+    `;
+    return;
+  }
+  
   filtered.forEach((blog) => createBlogCard(blog));
 }
 
@@ -70,10 +93,18 @@ function renderBlogs() {
 function createBlogCard(blog) {
   const card = document.createElement("article");
   card.className = "blog-card reveal";
+  const isPublished = blog.id && blog.id <= 24; // Built-in blogs are published
+  const publishedBadge = isPublished 
+    ? '<div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);"><i class="fa-solid fa-check-circle"></i>Published</div>' 
+    : '<div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.35rem 0.85rem; border-radius: 20px; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);"><i class="fa-solid fa-star"></i>Submitted</div>';
+  
   card.innerHTML = `
-    <div class="blog-tag">${blog.category}</div>
+    <div style="position: relative;">
+      ${publishedBadge}
+      <div class="blog-tag">${blog.category}</div>
+    </div>
     <h3 class="blog-title">${blog.title}</h3>
-    <div class="blog-meta">${blog.date}  ${blog.readTime} read</div>
+    <div class="blog-meta"><i class="fa-regular fa-calendar" style="margin-right: 0.5rem;"></i>${blog.date}  <span style="margin: 0 0.5rem;">•</span>  <i class="fa-regular fa-clock" style="margin-right: 0.5rem;"></i>${blog.readTime} read</div>
     <p class="blog-excerpt">${blog.excerpt}</p>
     <div class="blog-tags">
       ${blog.tags.map((tag) => `<span class="tag">#${tag}</span>`).join("")}
@@ -139,7 +170,21 @@ function formatBlogContent(content) {
 function openBlogModal(blog) {
   if (!blogModal) return;
   modalTitle.textContent = blog.title || "";
-  modalMeta.textContent = `${blog.date} • ${blog.readTime} • By ${blog.author || "Anonymous"}`;
+  
+  // Enhanced metadata with icons
+  const isPublished = blog.id && blog.id <= 24;
+  const badge = isPublished 
+    ? '<i class="fa-solid fa-check-circle" style="color: #22c55e;"></i> Published' 
+    : '<i class="fa-solid fa-star" style="color: #3b82f6;"></i> User Submission';
+  
+  modalMeta.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+      <span><i class="fa-regular fa-calendar" style="margin-right: 0.5rem;"></i>${blog.date}</span>
+      <span><i class="fa-regular fa-clock" style="margin-right: 0.5rem;"></i>${blog.readTime}</span>
+      <span><i class="fa-regular fa-user" style="margin-right: 0.5rem;"></i>By ${blog.author || "Anonymous"}</span>
+      <span>${badge}</span>
+    </div>
+  `;
   
   // Use proper HTML formatting for content
   const formattedContent = formatBlogContent(blog.content || blog.excerpt || "");

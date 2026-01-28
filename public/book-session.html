@@ -216,9 +216,7 @@
             Notification.success(thankYouMsg, 6000);
           }
           
-          // Show alert
-          console.log('🚨 Showing alert');
-          alert(thankYouMsg);
+          // Notification already shown above
           
           // Reset form
           form.reset();
@@ -228,7 +226,9 @@
         }
       } catch (error) {
         console.error('❌ Booking error:', error);
-        alert('Error: ' + error.message);
+        if (typeof Notification !== 'undefined') {
+          Notification.error('Error: ' + error.message);
+        }
       } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;

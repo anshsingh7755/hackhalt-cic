@@ -117,11 +117,6 @@ function initializeFormHandlers() {
       } catch (notifError) {
         console.error('❌ Notification.success() failed:', notifError);
       }
-      
-      // Also show alert for maximum visibility
-      console.log('🚨 About to show alert()');
-      alert(thankYouMessage);
-      console.log('🚨 Alert displayed');
 
       console.log('🔄 Resetting form');
       // Reset form
@@ -141,7 +136,6 @@ function initializeFormHandlers() {
       console.error("Error message:", error.message);
       console.error("Error stack:", error.stack);
       Notification.error(error.message || "An error occurred. Please try again.");
-      alert("Error: " + (error.message || "An error occurred. Please try again."));
 
     } finally {
       // Restore button state

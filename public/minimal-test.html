@@ -40,11 +40,9 @@
       e.preventDefault();
       addLog('After preventDefault() - form should NOT refresh');
       
-      // Wait a moment then show alert
+      // Wait a moment then log message
       setTimeout(() => {
-        addLog('Showing alert...');
-        alert('THANK YOU MESSAGE');
-        addLog('Alert shown');
+        addLog('✨ Thank you for your submission!');
       }, 500);
       
       return false;
