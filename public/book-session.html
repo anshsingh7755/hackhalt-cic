@@ -26,13 +26,13 @@
 
         <ul class="nav-links" id="navLinks">
           <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/community">Community</a></li>
-          <li><a href="/blogs">Blogs</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/partners">Partners</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/contact" class="btn btn-nav-cta">Join Us</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/blogs.html">Blogs</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/partners.html">Partners</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/contact.html" class="btn btn-nav-cta">Join Us</a></li>
         </ul>
 
         <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
@@ -88,7 +88,7 @@
               <li>Price: Custom (contact for quote)</li>
               <li>Includes: On-site option, dedicated lead, tailored curriculum</li>
             </ul>
-            <div style="margin-top:0.8rem;"><a class="btn btn-primary" href="/contact">Request Quote</a></div>
+            <div style="margin-top:0.8rem;"><a class="btn btn-primary" href="/contact.html">Request Quote</a></div>
           </div>
 
           <div class="pillar-card reveal" style="grid-column:1/-1;">
@@ -142,12 +142,12 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/community">Community</a></li>
-          <li><a href="/blogs">Blogs</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/partners">Partners</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/blogs.html">Blogs</a></li>
+          <li><a href="/events.html">Events</a></li>
+          <li><a href="/partners.html">Partners</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-links">
@@ -195,8 +195,8 @@
       submitBtn.textContent = 'Submitting...';
       
       try {
-        console.log('🚀 Sending POST to /api/book-session');
-        const response = await fetch('/api/book-session', {
+        console.log('🚀 Sending POST to Vercel API');
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/book-session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)

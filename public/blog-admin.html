@@ -761,7 +761,7 @@
     // Check authentication
     const token = localStorage.getItem('adminToken');
     if (!token) {
-      window.location.href = '/admin-login';
+      window.location.href = '/admin-login.html';
     }
 
     // Navigation
@@ -802,13 +802,13 @@
     // Logout
     document.getElementById('logoutBtn').addEventListener('click', () => {
       localStorage.removeItem('adminToken');
-      window.location.href = '/admin-login';
+      window.location.href = '/admin-login.html';
     });
 
     // Load admin profile
     async function loadAdminProfile() {
       try {
-        const response = await fetch('/api/admin/profile', {
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/admin/profile', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -827,7 +827,7 @@
     // Load dashboard stats
     async function loadDashboard() {
       try {
-        const response = await fetch('/api/submissions/blogs?limit=1000');
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs?limit=1000');
 
         const data = await response.json();
         if (data.success) {
@@ -850,7 +850,7 @@
       const blogsList = document.getElementById('blogsList');
 
       try {
-        const response = await fetch('/api/submissions/blogs?limit=100');
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs?limit=100');
 
         const data = await response.json();
         if (!data.success) {
@@ -927,7 +927,7 @@
 
     // View blog details
     function viewBlog(blogId) {
-      fetch('/api/submissions/blogs?limit=100')
+      fetch('https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs?limit=100')
         .then(res => res.json())
         .then(data => {
           if (data.success) {
@@ -996,7 +996,7 @@
 
     // Edit blog
     function editBlog(blogId) {
-      fetch('/api/submissions/blogs?limit=100')
+      fetch('https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs?limit=100')
         .then(res => res.json())
         .then(data => {
           if (data.success) {
@@ -1020,7 +1020,7 @@
 
       const message = document.getElementById('manageBlogsMessage');
 
-      fetch(`/api/submissions/blogs/${blogId}`, {
+      fetch(`https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs/${blogId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -1063,7 +1063,7 @@
       publishBtn.innerHTML = '<div class="loading"><div class="spinner"></div></div> Publishing...';
 
       try {
-        const response = await fetch('/api/blog', {
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/blog', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -1132,7 +1132,8 @@
     async function loadSubmissions() {
       const message = document.getElementById('submissionsMessage');
       const submissionsList = document.getElementById('submissionsList');
-      const endpoint = currentSubmissionType === 'contact' ? '/api/submissions/contact' : '/api/submissions/join';
+      const baseUrl = 'https://hackhalt-cic-szfr.vercel.app';
+      const endpoint = currentSubmissionType === 'contact' ? `${baseUrl}/api/submissions/contact` : `${baseUrl}/api/submissions/join`;
 
       try {
         console.log('Loading submissions from:', endpoint);
@@ -1214,7 +1215,8 @@
 
     // View submission details
     function viewSubmission(submissionId, type) {
-      const endpoint = type === 'contact' ? '/api/submissions/contact' : '/api/submissions/join';
+      const baseUrl = 'https://hackhalt-cic-szfr.vercel.app';
+      const endpoint = type === 'contact' ? `${baseUrl}/api/submissions/contact` : `${baseUrl}/api/submissions/join`;
       
       fetch(endpoint)
         .then(res => res.json())
@@ -1303,7 +1305,8 @@
         return;
       }
 
-      const endpoint = type === 'contact' ? `/api/submissions/contact/${submissionId}` : `/api/submissions/join/${submissionId}`;
+      const baseUrl = 'https://hackhalt-cic-szfr.vercel.app';
+      const endpoint = type === 'contact' ? `${baseUrl}/api/submissions/contact/${submissionId}` : `${baseUrl}/api/submissions/join/${submissionId}`;
 
       fetch(endpoint, {
         method: 'DELETE'
@@ -1525,7 +1528,7 @@
         tags: document.getElementById('editBlogTags').value.split(',').map(t => t.trim()).filter(t => t)
       };
 
-      fetch(`/api/submissions/blogs/${blogId}`, {
+      fetch(`https://hackhalt-cic-szfr.vercel.app/api/submissions/blogs/${blogId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedBlog)
@@ -1623,4 +1626,5 @@
       </div>
     </div>
   </div>
+
 

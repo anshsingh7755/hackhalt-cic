@@ -136,8 +136,8 @@
       addLog('📦 Form Data: ' + JSON.stringify(formData), 'info');
       
       try {
-        addLog('🔌 Sending POST to /api/contact...', 'info');
-        const response = await fetch('/api/contact', {
+        addLog('🔌 Sending POST to Vercel API...', 'info');
+        const response = await fetch('https://hackhalt-cic-szfr.vercel.app/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData)
