@@ -312,6 +312,7 @@
           headers: {
             'Content-Type': 'application/json'
           },
+          credentials: 'include',
           body: JSON.stringify({ username, password })
         });
 
@@ -331,7 +332,9 @@
           window.location.href = '/blog-admin';
         }, 1500);
       } catch (error) {
-        errorMessage.innerHTML = `<i class="fa-solid fa-exclamation-circle"></i><span>${error.message || 'Login failed. Please check your credentials.'}</span>`;
+        console.error('Login error:', error);
+        const errorMsg = error.message || 'Login failed. Please check your credentials and ensure the server is running.';
+        errorMessage.innerHTML = `<i class="fa-solid fa-exclamation-circle"></i><span>${errorMsg}</span>`;
         errorMessage.classList.add('show');
 
         loginBtn.disabled = false;
