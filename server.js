@@ -120,6 +120,7 @@ app.post("/api/admin/login", async (req, res) => {
     const admin = await Admin.findOne({ username }).select("+password");
     
     if (!admin) {
+      console.warn(`Login attempt for non-existent user: ${username}`);
       return res.status(401).json({
         success: false,
         error: "Invalid credentials"
@@ -127,9 +128,19 @@ app.post("/api/admin/login", async (req, res) => {
     }
 
     // Compare password
-    const isPasswordValid = await admin.comparePassword(password);
+    let isPasswordValid = false;
+    try {
+      isPasswordValid = await admin.comparePassword(password);
+    } catch (compareError) {
+      console.error('Password comparison error:', compareError);
+      return res.status(500).json({
+        success: false,
+        error: "Authentication error occurred"
+      });
+    }
     
     if (!isPasswordValid) {
+      console.warn(`Invalid password for user: ${username}`);
       return res.status(401).json({
         success: false,
         error: "Invalid credentials"
