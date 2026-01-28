@@ -128,15 +128,85 @@ app.get("/api/health", async (req, res) => {
   }
 });
 
+// GET /api/debug/admin - Debug admin user (development only)
+app.get("/api/debug/admin", async (req, res) => {
+  try {
+    const admin = await Admin.findOne({ username: 'admin' }).select("+password");
+    
+    if (!admin) {
+      return res.json({
+        success: false,
+        message: "Admin user not found"
+      });
+    }
+
+    res.json({
+      success: true,
+      username: admin.username,
+      email: admin.email,
+      role: admin.role,
+      isActive: admin.isActive,
+      hasPassword: !!admin.password,
+      passwordLength: admin.password ? admin.password.length : 0,
+      passwordPrefix: admin.password ? admin.password.substring(0, 30) : 'N/A',
+      isValidBcryptHash: admin.password && admin.password.startsWith('$2') ? 'Looks valid' : 'May be corrupted'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
+// POST /api/debug/test-password - Test password directly (development only)
+app.post("/api/debug/test-password", async (req, res) => {
+  try {
+    const { password } = req.body;
+    
+    if (!password) {
+      return res.status(400).json({
+        success: false,
+        error: "Password required"
+      });
+    }
+
+    const admin = await Admin.findOne({ username: 'admin' }).select("+password");
+    
+    if (!admin) {
+      return res.json({
+        success: false,
+        message: "Admin user not found"
+      });
+    }
+
+    const isValid = await admin.comparePassword(password);
+    
+    res.json({
+      success: true,
+      passwordTested: password,
+      passwordMatch: isValid,
+      adminPassword: admin.password ? admin.password.substring(0, 30) + '...' : 'N/A'
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
 // ========== ADMIN AUTHENTICATION ==========
 
 // POST /api/admin/login - Admin login
 app.post("/api/admin/login", async (req, res) => {
   try {
     const { username, password } = req.body;
+    console.log(`\n🔐 LOGIN ATTEMPT: username=${username}`);
 
     // Validation
     if (!username || !password) {
+      console.log('❌ Missing credentials');
       return res.status(400).json({
         success: false,
         error: "Missing username or password"
@@ -147,19 +217,27 @@ app.post("/api/admin/login", async (req, res) => {
     const admin = await Admin.findOne({ username }).select("+password");
     
     if (!admin) {
-      console.warn(`Login attempt for non-existent user: ${username}`);
+      console.warn(`❌ User not found: ${username}`);
+      const allAdmins = await Admin.find().select('username');
+      console.log('📋 Available users:', allAdmins.map(a => a.username));
       return res.status(401).json({
         success: false,
         error: "Invalid credentials"
       });
     }
 
+    console.log(`✓ Admin found: ${admin.username}`);
+    console.log(`✓ Password field exists: ${!!admin.password}`);
+    console.log(`✓ Password hash length: ${admin.password ? admin.password.length : 0}`);
+
     // Compare password
     let isPasswordValid = false;
     try {
+      console.log(`🔍 Testing password comparison...`);
       isPasswordValid = await admin.comparePassword(password);
+      console.log(`✓ Password comparison result: ${isPasswordValid}`);
     } catch (compareError) {
-      console.error('Password comparison error:', compareError);
+      console.error('❌ Password comparison error:', compareError.message);
       return res.status(500).json({
         success: false,
         error: "Authentication error occurred"
@@ -167,7 +245,7 @@ app.post("/api/admin/login", async (req, res) => {
     }
     
     if (!isPasswordValid) {
-      console.warn(`Invalid password for user: ${username}`);
+      console.warn(`❌ Invalid password for user: ${username}`);
       return res.status(401).json({
         success: false,
         error: "Invalid credentials"
