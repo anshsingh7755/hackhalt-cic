@@ -80,14 +80,39 @@ revealEls.forEach((el) => observer.observe(el));
 
 // Mobile nav toggle
 if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     navLinks.classList.toggle("open");
+    // Prevent body scroll when menu is open on mobile
+    if (navLinks.classList.contains("open")) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    }
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
+    link.addEventListener("click", (e) => {
+      // Only close if not a submenu toggle
+      if (!link.parentElement.classList.contains("nav-item-with-submenu") || 
+          !link.nextElementSibling || 
+          !link.nextElementSibling.classList.contains("nav-submenu")) {
+        navLinks.classList.remove("open");
+        document.body.style.overflow = '';
+        document.body.style.height = '';
+      }
     });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".nav") && navLinks.classList.contains("open")) {
+      navLinks.classList.remove("open");
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+    }
   });
 }
 

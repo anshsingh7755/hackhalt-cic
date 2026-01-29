@@ -64,6 +64,8 @@ app.use((req, res, next) => {
     res.set('Pragma', 'no-cache');
     res.set('Expires', '0');
   }
+  // Add mobile optimization headers
+  res.set('X-UA-Compatible', 'IE=edge');
   next();
 });
 
@@ -197,55 +199,6 @@ app.get("/admin-login", (req, res) => {
 });
 
 app.get("/blog-admin", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "blog-admin.html"));
-});
-
-// Additional routes for .html extensions and alternative paths
-app.get("/about.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "about.html"));
-});
-
-app.get("/community.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "community.html"));
-});
-
-app.get("/blogs.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "blogs.html"));
-});
-
-app.get("/events.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "events.html"));
-});
-
-app.get("/partners.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "partners.html"));
-});
-
-app.get("/contact.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "contact.html"));
-});
-
-app.get("/legal-compliance.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "legal-compliance.html"));
-});
-
-app.get("/book-session.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "book-session.html"));
-});
-
-app.get("/add-blog.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "add-blog.html"));
-});
-
-app.get("/admin.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "admin.html"));
-});
-
-app.get("/admin-login.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "admin-login.html"));
-});
-
-app.get("/blog-admin.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "blog-admin.html"));
 });
 
@@ -890,45 +843,26 @@ app.delete("/api/submissions/join/:id", async (req, res) => {
   }
 });
 
-// Catch-all for SPA routing - serve index.html for any unmatched route
-// This allows client-side router to handle the page
-app.get("*", (req, res) => {
-  // For obvious static file requests, return 404
-  const pathname = req.path;
-  
-  // Check if it looks like a static asset request
-  if (pathname.match(/\.(js|css|json|xml|txt|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot)$/i)) {
-    return res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
+// Catch-all for unmatched routes
+app.use((req, res) => {
+  // Don't return 404 for API calls that failed to match
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ success: false, error: 'API endpoint not found' });
   }
   
-  // For any other path that isn't a known route, still try to serve the requested page
-  // Check if it's trying to access a specific page file
-  const pageMatch = pathname.match(/^\/([a-z-]+)(?:#.*)?$/);
-  if (pageMatch) {
-    const pageName = pageMatch[1];
-    const pageFile = `${pageName}.html`;
-    const pagePath = path.join(__dirname, "public", pageFile);
-    
-    // Try to serve the page if it exists
-    try {
-      const fs = require('fs');
-      if (fs.existsSync(pagePath)) {
-        return res.sendFile(pagePath);
-      }
-    } catch (e) {
-      // Continue to 404
+  // For any other unmatched route, return 404 page
+  res.status(404).sendFile(path.join(__dirname, "public", "404.html"), (err) => {
+    if (err) {
+      res.status(404).send('Page not found');
     }
-  }
-  
-  // Default 404
-  res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
+  });
 });
 
 // Export for Vercel
 module.exports = app;
 
 // Only listen locally (not on Vercel)
-if (process.env.NODE_ENV !== 'production') {
+if (require.main === module && process.env.NODE_ENV !== 'production') {
   app.listen(PORT, () => {
     console.log(`HackHalt CIC server running at http://localhost:${PORT}`);
   });
