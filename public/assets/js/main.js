@@ -138,6 +138,113 @@ function smoothScroll(target, offset = 70) {
   window.scrollTo({ top: offsetTop, behavior: "smooth" });
 }
 
+// Handle hash-based anchor navigation on page load and hash changes
+function handleAnchorNavigation() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  
+  // Remove the # and use as selector
+  const targetId = hash.substring(1);
+  if (!targetId) return;
+  
+  // Function to find element and scroll
+  const findAndScroll = () => {
+    // Try multiple ways to find the element
+    let element = document.getElementById(targetId);
+    if (!element) {
+      element = document.querySelector(`[name="${targetId}"]`);
+    }
+    if (!element) {
+      element = document.querySelector(`[data-anchor="${targetId}"]`);
+    }
+    
+    if (element && element.offsetParent !== null) {
+      // Element found and is visible, scroll to it
+      const headerHeight = 120; // Increased to account for fixed header
+      const elementTop = element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      
+      try {
+        window.scrollTo({
+          top: Math.max(0, elementTop),
+          behavior: 'smooth'
+        });
+      } catch (e) {
+        // Fallback for browsers that don't support smooth scroll
+        window.scrollTo(0, Math.max(0, elementTop));
+      }
+      
+      // Focus the element for accessibility
+      if (element.tabIndex === -1) {
+        element.setAttribute('tabindex', '-1');
+      }
+      element.focus();
+      
+      console.log(`✅ Scrolled to anchor: #${targetId}`);
+      return true;
+    }
+    return false;
+  };
+  
+  // Try immediately
+  if (findAndScroll()) return;
+  
+  // Try with progressive delays for dynamic content and lazy-loaded elements
+  setTimeout(() => findAndScroll(), 50);
+  setTimeout(() => findAndScroll(), 150);
+  setTimeout(() => {
+    if (findAndScroll()) {
+      console.log(`✅ Found anchor after 300ms delay: #${targetId}`);
+    }
+  }, 300);
+  setTimeout(() => {
+    if (findAndScroll()) {
+      console.log(`✅ Found anchor after 500ms delay: #${targetId}`);
+    } else {
+      console.warn(`⚠️  Could not find anchor element: #${targetId}`);
+    }
+  }, 500);
+}
+
+// Run on page load - wait for DOM to be ready
+if (document.readyState === 'loading') {
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(handleAnchorNavigation, 100);
+  });
+} else {
+  setTimeout(handleAnchorNavigation, 100);
+}
+
+// Handle hash changes (including browser back/forward)
+window.addEventListener("hashchange", () => {
+  setTimeout(handleAnchorNavigation, 50);
+});
+
+// Also handle when user clicks an anchor link directly
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[href*=\"#\"]");
+  if (!link) return;
+  
+  const href = link.getAttribute("href");
+  if (!href || !href.includes("#")) return;
+  
+  // Extract the hash part
+  const hashMatch = href.match(/#(.+)$/);
+  if (!hashMatch) return;
+  
+  const hash = hashMatch[1];
+  
+  // For same-page anchors, prevent default and handle ourselves
+  const currentPath = window.location.pathname;
+  const linkPath = new URL(href, window.location.origin).pathname;
+  
+  if (currentPath === linkPath || !linkPath || linkPath === '/') {
+    // Same page anchor
+    e.preventDefault();
+    window.location.hash = '#' + hash;
+    setTimeout(handleAnchorNavigation, 50);
+  }
+});
+
 // Add accessibility features
 document.addEventListener("keydown", (e) => {
   // Skip to main content (Alt + M)
@@ -166,6 +273,22 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { rootMargin: "50px" });
 
+// Lazy load images
 document.querySelectorAll("img[data-src]").forEach((img) => {
   imageObserver.observe(img);
 });
+
+// Optimize font loading with critical fonts
+if (document.fonts) {
+  Promise.all([
+    document.fonts.load('400 1em Inter'),
+    document.fonts.load('500 1em Inter'),
+    document.fonts.load('600 1em Inter'),
+    document.fonts.load('700 1em Inter')
+  ]).then(() => {
+    document.body.classList.add('fonts-loaded');
+  }).catch(() => {
+    // Fallback if fonts fail to load
+    document.body.classList.add('fonts-loaded');
+  });
+}

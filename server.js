@@ -56,6 +56,17 @@ app.use((req, res, next) => {
 // serve static files from /public
 app.use(express.static(path.join(__dirname, "public")));
 
+// Add cache control middleware for HTML pages
+app.use((req, res, next) => {
+  // Don't cache HTML pages - always check for updates
+  if (req.path.endsWith('.html') || !req.path.includes('.')) {
+    res.set('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+  }
+  next();
+});
+
 // Connect to MongoDB
 connectDB();
 
@@ -186,6 +197,55 @@ app.get("/admin-login", (req, res) => {
 });
 
 app.get("/blog-admin", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "blog-admin.html"));
+});
+
+// Additional routes for .html extensions and alternative paths
+app.get("/about.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "about.html"));
+});
+
+app.get("/community.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "community.html"));
+});
+
+app.get("/blogs.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "blogs.html"));
+});
+
+app.get("/events.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "events.html"));
+});
+
+app.get("/partners.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "partners.html"));
+});
+
+app.get("/contact.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "contact.html"));
+});
+
+app.get("/legal-compliance.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "legal-compliance.html"));
+});
+
+app.get("/book-session.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "book-session.html"));
+});
+
+app.get("/add-blog.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "add-blog.html"));
+});
+
+app.get("/admin.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "admin.html"));
+});
+
+app.get("/admin-login.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "admin-login.html"));
+});
+
+app.get("/blog-admin.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "blog-admin.html"));
 });
 
@@ -830,8 +890,37 @@ app.delete("/api/submissions/join/:id", async (req, res) => {
   }
 });
 
-// 404 handler
-app.use((req, res) => {
+// Catch-all for SPA routing - serve index.html for any unmatched route
+// This allows client-side router to handle the page
+app.get("*", (req, res) => {
+  // For obvious static file requests, return 404
+  const pathname = req.path;
+  
+  // Check if it looks like a static asset request
+  if (pathname.match(/\.(js|css|json|xml|txt|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|eot)$/i)) {
+    return res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
+  }
+  
+  // For any other path that isn't a known route, still try to serve the requested page
+  // Check if it's trying to access a specific page file
+  const pageMatch = pathname.match(/^\/([a-z-]+)(?:#.*)?$/);
+  if (pageMatch) {
+    const pageName = pageMatch[1];
+    const pageFile = `${pageName}.html`;
+    const pagePath = path.join(__dirname, "public", pageFile);
+    
+    // Try to serve the page if it exists
+    try {
+      const fs = require('fs');
+      if (fs.existsSync(pagePath)) {
+        return res.sendFile(pagePath);
+      }
+    } catch (e) {
+      // Continue to 404
+    }
+  }
+  
+  // Default 404
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
 });
 

@@ -7,8 +7,27 @@
       "destination": "/server.js"
     },
     {
-      "source": "/((?!api|assets|images).*)",
+      "source": "/((?!api|assets|images|public).*)\\.html",
       "destination": "/server.js"
+    },
+    {
+      "source": "/((?!api|assets|images|public).*)",
+      "destination": "/server.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*\\.html|/)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        }
+      ]
     }
   ],
   "functions": {

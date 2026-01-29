@@ -2,7 +2,12 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
+  <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#f9fafb" media="(prefers-color-scheme: light)" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <title>Book a Session — HackHalt</title>
   <meta name="description" content="Request a training session with HackHalt experts. Choose a package, pick a date, and request a quote." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -176,9 +181,9 @@
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
-  <script src="assets/js/utils.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script>
+  <script src="assets/js/utils.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script defer>
     // Booking form handler with API integration
     document.getElementById('bookingForm')?.addEventListener('submit', async function (e) {
       console.log('🔴 BOOKING FORM SUBMIT EVENT FIRED!');
